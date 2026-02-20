@@ -1,0 +1,24 @@
+site_name: FCScore Documentation
+site_description: Flight Coach Score Documentation
+site_url: https://pyflightcoach.github.io/FCScoreDocs/
+
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
