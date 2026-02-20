@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+fcscoredocs.egg-info/PKG-INFO
+fcscoredocs.egg-info/SOURCES.txt
+fcscoredocs.egg-info/dependency_links.txt
+fcscoredocs.egg-info/requires.txt
+fcscoredocs.egg-info/top_level.txt

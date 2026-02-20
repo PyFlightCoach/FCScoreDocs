@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fcscoredocs"
+version = "0.1.0"
+description = "Flight Coach Score Documentation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mkdocs>=1.6",
+  "mkdocs-material>=9.5",
+  "pymdown-extensions>=10.0",
+]
+
+[tool.setuptools]
+py-modules = []

@@ -10,15 +10,47 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
     - toc.integrate
     - search.suggest
 
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences 
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
   - toc:
       permalink: true
 
 nav:
-  - Home: index.md
+  - Instructions:
+    - instructions/index.md
+    - Scoring a Flight:
+      - instructions/scoring/index.md
+      - Loading Flight Data: instructions/scoring/load_flight_data.md
+      - Set Up The Box: instructions/scoring/box_definition.md
+      - Define The Manoeuvres: instructions/scoring/manoeuvre_segmentation.md
+      - Results: instructions/scoring/results.md
+    - Understanding the Results:
+      - instructions/manoeuvre_analysis/index.md
+      - Element Segmentation: instructions/manoeuvre_analysis/element_segmentation.md
+      - Intra Downgrades: instructions/manoeuvre_analysis/intra.md
+      - Inter Downgrades: instructions/manoeuvre_analysis/inter.md
+      - Positioning Downgrades: instructions/manoeuvre_analysis/positioning.md
+    - Competitions:
+      - instructions/competitions/index.md
+      - Cheat Sheet: instructions/competitions/cheat_sheet.md
+      - Example 1: instructions/competitions/example_1.md
+      - Example 2: instructions/competitions/example_2.md
+      - Example 3: instructions/competitions/example_3.md
+  - Analysis Process: 
+    - process/index.md
+    - Sequence Definition: process/sequence_definition.md
+    - Element Segmentation: process/segmentation.md
+    - Intra Scoring: process/intra.md
+    - Inter Scoring: process/inter.md
+    - Positioning Scoring: process/box.md
+  - Downgrades: 
+    - downgrades/index.md
