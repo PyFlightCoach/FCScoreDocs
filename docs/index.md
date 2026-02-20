@@ -1,10 +1,6 @@
 # FCScore Documentation
 
-Welcome to the Flight Coach Score documentation site.
-
-## Overview
-
-FCScore is a scoring system for flight coach. This site contains documentation, guides, and reference material.
+FCScore a web application for the automatic judging of F3A, IMAC and IAC aerobatic flights based on recorded flight data. 
 
 ## Getting Started
 
