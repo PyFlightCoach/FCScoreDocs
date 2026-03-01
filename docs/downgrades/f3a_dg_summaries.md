@@ -14,7 +14,7 @@
 | upwind_track    | upwind_track_error      | vector_direction | take_end       | Continuous      | NONE                                 | LINE        | SPIN                     |
 | roll_rate       | roll_rate               | roll_rate        |                | Deviation       | ANY                                  | LINE, ROLL  | ANY                      |
 | roll_angle      | roll_angle              | roll_angle       | last           | Single          | ANY                                  | LINE, ROLL  | ANY                      |
-| speed           | speed                   | vector_direction |                | ContinuousValue | !SPIN, !STALLTURN, !TAILSLIDE, !NONE | LINE | LOOP | !SPIN, !STALLTURN, !NONE |
+| speed           | speed                   | vector_direction |                | ContinuousValue | !SPIN, !STALLTURN, !TAILSLIDE, !NONE | LINE / LOOP | !SPIN, !STALLTURN, !NONE |
 | track_y         | rf_y_track              | vector_direction |                | Continuous      | !SPIN, !STALLTURN, !TAILSLIDE, !NONE | LINE        | !SPIN, !STALLTURN, !NONE |
 | track_z         | rf_z_track              | vector_direction |                | Continuous      | !SPIN, !STALLTURN, !TAILSLIDE, !NONE | LINE        | !SPIN, !STALLTURN, !NONE |
 
@@ -46,11 +46,11 @@
 | name            | measure         | visibility   | selectors       | criteria   | last         | this        | next   |
 |:----------------|:----------------|:-------------|:----------------|:-----------|:-------------|:------------|:-------|
 | drop_pitch_rate | pitch_down_rate | pitch_rate   | autorot_break   | Bounded    | !SPIN        | SPIN        | ANY    |
-| inst_rotation   | inst_roll       | roll_angle   | after_break     | Total      | !SPIN, !SNAP | SPIN | SNAP | ANY    |
-| inst_rotation   | inst_roll       | roll_angle   |                 | Total      | SPIN, SNAP   | SPIN | SNAP | ANY    |
+| inst_rotation   | inst_roll       | roll_angle   | after_break     | Total      | !SPIN, !SNAP | SPIN / SNAP | ANY    |
+| inst_rotation   | inst_roll       | roll_angle   |                 | Total      | SPIN, SNAP   | SPIN / SNAP | ANY    |
 | peak_drop_pr    | pitch_down_rate | pitch_rate   | autorot_break   | AbsTrough  | !SPIN        | SPIN        | ANY    |
 | alpha           | spin_alpha      | pitch_rate   | before_recovery | Bounded    | ANY          | SPIN        | ANY    |
-| turns           | roll_angle_y    | roll_angle   | last            | Single     | ANY          | SPIN | SNAP | ANY    |
+| turns           | roll_angle_y    | roll_angle   | last            | Single     | ANY          | SPIN / SNAP | ANY    |
 
 ## STALLTURN
 

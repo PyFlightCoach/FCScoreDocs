@@ -4,7 +4,7 @@
 |:-----------------|:--------------|:-----------------|:------------|:-----------|:-----------------------|:------------|:-----------------------|
 | entry_roll_angle | roll_angle    | roll_angle       | first       | Single     | NONE                   | LINE        | ANY                    |
 | entry_track_y    | rf_y_track    | vector_direction | first       | Single     | NONE                   | LINE        | ANY                    |
-| entry_track_z    | rf_z_track    | vector_direction | first       | Single     | NONE | STALLTURN       | LINE        | ANY                    |
+| entry_track_z    | rf_z_track    | vector_direction | first       | Single     | NONE / STALLTURN       | LINE        | ANY                    |
 | yaw              | rf_z_attitude | vector_direction | first       | Single     | TAILSLIDE              | LINE        | ANY                    |
 | roll_angle       | roll_angle    | roll_angle       |             | Continuous | ANY                    | LINE, !ROLL | ANY                    |
 | roll_rate        | roll_rate     | roll_rate        |             | Deviation  | ANY                    | LINE, ROLL  | ANY                    |
@@ -39,10 +39,10 @@
 | name            | measure         | visibility   | selectors       | criteria   | last   | this        | next   |
 |:----------------|:----------------|:-------------|:----------------|:-----------|:-------|:------------|:-------|
 | drop_pitch_rate | pitch_down_rate | pitch_rate   | autorot_break   | Bounded    | ANY    | SPIN        | ANY    |
-| inst_rotation   | inst_roll       | roll_angle   | after_break     | Total      | !SPIN  | SPIN | SNAP | ANY    |
+| inst_rotation   | inst_roll       | roll_angle   | after_break     | Total      | !SPIN  | SPIN / SNAP | ANY    |
 | peak_drop_pr    | pitch_down_rate | pitch_rate   | autorot_break   | AbsTrough  | ANY    | SPIN        | ANY    |
 | alpha           | spin_alpha      | pitch_rate   | before_recovery | Bounded    | ANY    | SPIN        | ANY    |
-| turns           | roll_angle_y    | roll_angle   | last            | Single     | ANY    | SPIN | SNAP | ANY    |
+| turns           | roll_angle_y    | roll_angle   | last            | Single     | ANY    | SPIN / SNAP | ANY    |
 
 ## STALLTURN
 
