@@ -29,6 +29,10 @@ The rest of this guide comprises some worked examples introducing how to create 
 - The third example covers setting up an online competition.
 
 
+## Finding competitions in the client
+
+The trophy icon in the top navigation bar opens the competition menu. **Browse Competitions** lists competitions with filters (**All**, **Entered**, **Open**, and **Mine** for competition directors) and the actions **View** and **Enter**. Competitions you run or have entered are also listed in the menu. **Create Competition** is shown to competition directors and administrators. A competition's page shows its **Results**, or the **Running Order** when the results are hidden.
+
 [Cheat Sheet](cheat_sheet.md)
 
 [Example: Creating a Competition](example_1.md)
