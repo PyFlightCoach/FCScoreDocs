@@ -60,3 +60,7 @@ nav:
     - Positioning Scoring: process/box.md
   - Downgrades: 
     - downgrades/index.md
+    - F3A: downgrades/f3a.md
+    - IMAC: downgrades/IMAC.md
+    - IAC Power: downgrades/IAC.md
+    - IAC Glider: downgrades/IACGlider.md
