@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 5
 requires-python = ">=3.10"
 
 [[package]]
@@ -147,7 +147,7 @@ wheels = [
 [[package]]
 name = "fcscoredocs"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "mkdocs" },
     { name = "mkdocs-material" },
@@ -156,8 +156,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "mkdocs", specifier = ">=1.6" },
-    { name = "mkdocs-material", specifier = ">=9.5" },
+    { name = "mkdocs", specifier = ">=1.6,<2" },
+    { name = "mkdocs-material", specifier = ">=9.5,<10" },
     { name = "pymdown-extensions", specifier = ">=10.0" },
 ]
 

@@ -1,6 +1,12 @@
 site_name: FCScore Documentation
 site_description: Flight Coach Score Documentation
-site_url: https://pyflightcoach.github.io/FCScoreDocs/
+site_url: !ENV [DOCS_SITE_URL, "https://pyflightcoach.github.io/FCScoreDocs/"]
+
+hooks:
+  - hooks/help_files.py
+
+not_in_nav: |
+  /help/
 
 theme:
   name: material
