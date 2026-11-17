@@ -19,6 +19,30 @@ EXPECTED_ALIASES = {
     "flight_box": "flight_create_box",
     "flight_segmentation": "flight_create_manoeuvres",
 }
+# Routes that deliberately have no help file, with the reason. The panel shows
+# "No help for this page" there. Review when the client's routes change.
+EXCLUDED = {
+    "flight_create": "redirects to the flight's box page",
+    "flight_create_acrowrx": "redirects to /flight/acrowrx",
+    "flight_create_bin": "redirects to /flight/bin",
+    "flight_create_db": "redirects to the flight page",
+    "flight_create_external_result": "redirects to /flight/external/result",
+    "flight_create_holding": "redirects to /flight/holding",
+    "flight_external_result": "loading page only",
+    "flight_holding": "internal: loads a database holding file",
+    "flight_old_results": "legacy results view",
+    "flight_old_results_manoeuvre": "legacy results view",
+    "flight_old_results_manoeuvre_inter": "legacy results view",
+    "flight_old_results_manoeuvre_intra": "legacy results view",
+    "flight_old_results_manoeuvre_positioning": "legacy results view",
+    "flight_old_results_manoeuvre_segmentation": "legacy results view",
+    "news": "administrator tool",
+    "telemetry": "administrator tool",
+    "user_manage": "administrator tool",
+    "schedules_create": "redirects to /schedules",
+    "schedules_manage": "redirects to /schedules",
+    "user": "empty page",
+}
 GROUP_OR_PARAM = re.compile(r"^[\[(].*[\])]$")
 ALIAS_PAIR = re.compile(r"""['"]?(\w+)['"]?\s*:\s*['"](\w+)['"]""")
 
@@ -92,10 +116,10 @@ def main() -> int:
     missing = []
     for name in sorted(expected):
         exists = (DOCS_HELP / f"{name}.md").is_file()
-        if not exists:
+        if not exists and name not in EXCLUDED:
             missing.append(name)
         for route in expected[name]:
-            status = "ok" if exists else "MISSING"
+            status = "ok" if exists else "excluded" if name in EXCLUDED else "MISSING"
             print(f"  {status:8} {name:32} {route}")
 
     present = {p.stem for p in DOCS_HELP.glob("*.md")}
@@ -106,7 +130,12 @@ def main() -> int:
     if not unused:
         print("  (none)")
 
+    stale = sorted(set(EXCLUDED) - set(expected))
+    for name in stale:
+        print(f"WARNING: excluded name {name} matches no route; remove it from EXCLUDED")
+    excluded = sum(1 for name in expected if name in EXCLUDED and name not in present)
     print(f"Summary: {len(pages)} routes, {len(missing)} missing help file(s), "
+          f"{excluded} excluded, "
           f"{len(unused)} unused help file(s)")
     if args.strict and missing:
         return 1

@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `9c933c2`.
+Generated from Tuning commit: `8ec590c`.
 
 **Rulebook source**
 
@@ -898,7 +898,7 @@ Checks that the figure stays inside the floor of the box. The distance outside, 
 
 `inter.loop_radius`
 
-Checks that the loops and part-loops in a figure that must have the same radius do match. Each radius is compared with the one before it and the percentage difference is charged. Small differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
+Checks that the loops and part-loops in a figure that must have the same radius do match. Each radius is compared with the one before it and the percentage difference is charged. Differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
 
 ??? note "Details"
 
@@ -906,7 +906,7 @@ Checks that the loops and part-loops in a figure that must have the same radius 
 
     FCScore takes the radius of each loop the figure requires to match and compares each with the previous one, rather than with the first, charging in proportion to how many times larger one is than the other. A pair that matches scores zero, whatever the size. Whether each loop is round is judged by Loop Roundness.
 
-    Visibility only ever reduces how much of a small difference is charged. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour. Large differences are counted in full.
+    Visibility scales the whole downgrade, not only small differences. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour.
 
 > Where radii of part loops within these figures are required to be the same and they are not, a downgrade of one (1) point is to be applied for each mismatch. The standard is the first part loop flown within the figure.
 >
@@ -916,7 +916,7 @@ Checks that the loops and part-loops in a figure that must have the same radius 
 
 `inter.line_length`
 
-Checks that lines that must be of equal length in a figure are. Each length is compared with the one before it and the percentage difference is charged. Small differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
+Checks that lines that must be of equal length in a figure are. Each length is compared with the one before it and the percentage difference is charged. Differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
 
 ??? note "Details"
 
@@ -924,7 +924,7 @@ Checks that lines that must be of equal length in a figure are. Each length is c
 
     FCScore takes the length of each line the figure requires to match and compares each with the previous one, charging in proportion to how many times longer one is than the other. A pair that matches scores zero, whatever the length. FCScore's scale is smooth rather than in the rulebook's steps.
 
-    Visibility only ever reduces how much of a small difference is charged. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour. Large differences are counted in full.
+    Visibility scales the whole downgrade, not only small differences. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour.
 
 > If within a figure two or more lines must be of the same length, an observed variation is penalized by the grade in the following manner (Fig. 14): … A visible variation = 1 point deduction … If the lengths vary by 1:2 = 2 point deduction … And so forth up to a 3 point deduction
 >
@@ -938,7 +938,7 @@ Checks that lines that must be of equal length in a figure are. Each length is c
 
 `inter.point_length`
 
-Checks that the pauses between the rolls or points of a roll combination are of the same length. Each length is compared with the one before it and the percentage difference is charged. Small differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
+Checks that the pauses between the rolls or points of a roll combination are of the same length. Each length is compared with the one before it and the percentage difference is charged. Differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
 
 ??? note "Details"
 
@@ -946,7 +946,7 @@ Checks that the pauses between the rolls or points of a roll combination are of 
 
     FCScore takes the distance flown in each pause of a roll combination on the same line and compares each with the previous one, charging in proportion to how many times longer one is than the other. A pair that matches scores zero, whatever the length. The rules judge the duration of the pauses, while FCScore compares the distance flown during them.
 
-    Visibility only ever reduces how much of a small difference is charged. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour. Large differences are counted in full.
+    Visibility scales the whole downgrade, not only small differences. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour.
 
 > Each visible variation in the duration of the pause segments is downgraded by one (1) point.
 >
@@ -960,7 +960,7 @@ Checks that the pauses between the rolls or points of a roll combination are of 
 
 `inter.roll_rate`
 
-Checks that the rolls within one roll combination are flown at the same roll rate. Each rate is compared with the one before it and the percentage difference is charged. Small differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
+Checks that the rolls within one roll combination are flown at the same roll rate. Each rate is compared with the one before it and the percentage difference is charged. Differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
 
 ??? note "Details"
 
@@ -968,7 +968,7 @@ Checks that the rolls within one roll combination are flown at the same roll rat
 
     FCScore takes the roll rate of each roll within a roll combination on the same line and compares each with the previous one, charging in proportion to how many times faster one is than the other. A pair that matches scores zero, whatever the rate. FCScore groups rolls by the figure definition rather than by the rule, so check the rulebook for your figure. Whether the rate is steady within one roll is judged by Roll Rate Consistency.
 
-    Visibility only ever reduces how much of a small difference is charged. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour. Large differences are counted in full.
+    Visibility scales the whole downgrade, not only small differences. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour.
 
 > Any visible deviation in roll rate from one segment to the next, or within a segment, is to be downgraded by one (1) point per occurrence.
 >
@@ -978,7 +978,7 @@ Checks that the rolls within one roll combination are flown at the same roll rat
 
 `inter.pad_length`
 
-Checks that a roll is centred on its line, with equal lengths of line before and after it. The two lengths are compared and the percentage difference is charged. Small differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
+Checks that a roll is centred on its line, with equal lengths of line before and after it. The two lengths are compared and the percentage difference is charged. Differences are discounted for small elements, which are harder to compare: visibility rises with the distance flown relative to the height of the box.
 
 ??? note "Details"
 
@@ -986,7 +986,7 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 
     FCScore compares the length of line before the roll with the length after, charging in proportion to how many times longer one is than the other. A roll that is perfectly centred scores zero, whatever the length of the line.
 
-    Visibility only ever reduces how much of a small difference is charged. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour. Large differences are counted in full.
+    Visibility scales the whole downgrade, not only small differences. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour.
 
 > Whenever any kind of roll is placed on an interior line, the lengths of the two parts of the line before and after the roll must be equal.
 >
