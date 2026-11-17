@@ -39,12 +39,19 @@ nav:
       - Set Up The Box: instructions/scoring/box_definition.md
       - Define The Manoeuvres: instructions/scoring/manoeuvre_segmentation.md
       - Results: instructions/scoring/results.md
+      - Several Schedules: instructions/scoring/multiple_schedules.md
     - Understanding the Results:
       - instructions/manoeuvre_analysis/index.md
       - Element Segmentation: instructions/manoeuvre_analysis/element_segmentation.md
       - Intra Downgrades: instructions/manoeuvre_analysis/intra.md
       - Inter Downgrades: instructions/manoeuvre_analysis/inter.md
       - Positioning Downgrades: instructions/manoeuvre_analysis/positioning.md
+    - Schedules:
+      - instructions/schedules/index.md
+      - Creating a Schedule: instructions/schedules/create.md
+      - Managing Schedules: instructions/schedules/manage.md
+    - User Management: instructions/users/index.md
+    - Flight Database: instructions/database/index.md
     - Competitions:
       - instructions/competitions/index.md
       - Cheat Sheet: instructions/competitions/cheat_sheet.md
