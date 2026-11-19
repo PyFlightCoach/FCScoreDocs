@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `b86030c`.
+Generated from Tuning commit: `45980a7`.
 
 **Rulebook source**
 
@@ -204,7 +204,7 @@ Checks that the wings stay aligned on lines without a roll, and that there is no
 
     On vertical lines the wings must be aligned with a box axis and the horizon, and during a stall turn pivot there must be no rolling or pitching motion, at one point per 5°. A tailslide is judged in the same way.
 
-    FCScore measures the roll angle relative to the template on lines that contain no roll, and through stall turns and tailslides, and charges each increase in the absolute roll error; a decrease is free. An angle already present at the start of the element is not charged again, as it was charged where it arose. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore measures the roll angle relative to the template on lines that contain no roll, and through stall turns and tailslides, and charges each increase in the absolute roll error; a decrease is free. An angle already present at the start of the element is not charged again, as it was charged where it arose. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule. The line between two figures belongs to the next figure, so what is measured on the exit line of a figure is reported with the following figure, and the figure's own score keeps the rest.
 
     Visibility only ever reduces how much of a small error is charged. Roll errors are easiest to see when the aircraft is viewed side-on and hardest when you are looking at its top or underside. They are also harder to judge when the aircraft is high in the box or far to one side, and when the bank angle or the line is awkward to picture: wings level, knife-edge and inverted are the easiest references, with the angles in between the hardest. A fixed balancing factor, smaller than for flight path errors, further reduces small roll errors. Large errors are counted in full.
 

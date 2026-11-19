@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `b86030c`.
+Generated from Tuning commit: `45980a7`.
 
 **Rulebook source**
 
@@ -1338,6 +1338,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 
 > Speed of aircraft is not a criterion. A reduction of grade will be applied for each deviation from the prescribed criteria for the figure. The grade will be reduced by 0.5 points for each 5 degrees of deviation.
 
+### Section II, 6.2 {#rb-lines.figure_end}
+
+`lines.figure_end`
+
+> A figure is complete at the moment the aircraft returns to a wings-level, horizontal flight path of one fuselage plane length.
+
 ### Section II, 6.2 {#rb-lines.figure_exit}
 
 `lines.figure_exit`
@@ -1349,6 +1355,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 `lines.figure_start`
 
 > The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+
+### Section II, 7.1 {#rb-lines.between_figures}
+
+`lines.between_figures`
+
+> Therefore, leaving out the line between two figures will downgrade the preceding figure by one (1) point and the following figure also by one (1) point (Fig. 11).
 
 ### Section II, 7.1 {#rb-lines.entry_exit}
 

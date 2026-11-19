@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `b86030c`.
+Generated from Tuning commit: `45980a7`.
 
 **Rulebook source**
 

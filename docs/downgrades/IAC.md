@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `b86030c`.
+Generated from Tuning commit: `45980a7`.
 
 **Rulebook source**
 
@@ -1444,6 +1444,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 
 > Figures begin and end in wings-level, horizontal flight, aligned with a box axis.
 
+### 26.1.9 {#rb-general.grading_window}
+
+`general.grading_window`
+
+> The grading of each figure begins upon departure from horizontal flight and ends upon resumption of horizontal flight.
+
 ### 26.10.1 {#rb-general.autorotation}
 
 `general.autorotation`
@@ -1461,6 +1467,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 `general.entry_geometry`
 
 > When a downgrade in geometry (pitch, roll, yaw) is observed for one element within a figure, any immediately following element within the same figure is not downgraded a second time for any misaligned entry geometry.
+
+### 26.8.1 {#rb-general.no_line_between}
+
+`general.no_line_between`
+
+> If there is no discernible horizontal line between figures, deduct one (1) point from each figure.
 
 ### 27.1.1 {#rb-general.flight_path}
 
