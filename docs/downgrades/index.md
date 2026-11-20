@@ -6,6 +6,8 @@ This is the reference for every downgrade FCScore can apply. There is one page p
 - [IMAC](IMAC.md)
 - [IAC Power](IAC.md)
 - [IAC Glider](IACGlider.md)
+- [CIVA](CIVA.md)
+- [CIVA Glider](CIVAGlider.md)
 
 The pages are generated from the Tuning data of FCScore, so they describe what the scoring code actually does. Each page opens with the rulebook edition its quotations come from.
 

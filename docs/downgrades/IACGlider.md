@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `45980a7`.
+Generated from Tuning commit: `9bb5210`.
 
 **Rulebook source**
 
@@ -12,7 +12,14 @@ Generated from Tuning commit: `45980a7`.
 >
 > This configuration applies the IAC rules to glider aircraft.
 >
-> The judging references in `judging_guide.json` are the IAC references used for powered aircraft plus the glider rules in Chapter 34 (34.8 boundary penalties, 34.10 altitude limits and 34.20 Grading Glider Performances). The glider configuration uses the same measurements and settings as the powered one, so the glider allowances for sloping entry and exit lines and constant-angle turns are not separately configured.
+> The judging references in `judging_guide.json` are the IAC references used for powered aircraft plus the glider rules in Chapter 34 (34.8 boundary penalties, 34.10 altitude limits and 34.20 Grading Glider Performances).
+>
+> The glider rules (34.20) are modelled as follows:
+>
+> - **Angle of horizontal lines and turns.** Gliders may fly figures that are level in power at a constant, reasonable angle (34.20.2.1, 34.20.3.1). The rules give no limit, so FCScore allows a flight path from level to 10° below the horizon, charges one point per 5° outside that bracket where a figure starts or ends on a horizontal line, and charges any change in the angle during a line or turn.
+> - **Snap rolls** need not be centred on their lines (34.20.4.1): a line that contains a snap is left out of the line length comparison.
+> - **Tailslides** need only slide a visible amount (34.20.5.1). FCScore takes 0.3 m as visible, and a missing slide costs about one point.
+> - **30° lines (34.20.1.1) are not yet implemented.** Gliders in Primary, Sportsman and Intermediate fly 30° lines in place of 45° lines. FCScore still judges 45° lines in those categories.
 
 Rulebook extracts are quoted verbatim and listed under [Rulebook references](#rulebook-references).
 
@@ -22,13 +29,13 @@ Rulebook extracts are quoted verbatim and listed under [Rulebook references](#ru
 
 `climb`
 
-Checks that horizontal lines are flown at constant altitude, with no climb or descent in the flight path. Only growth in the climb or descent angle is charged, so returning to level flight is free. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
+Checks that horizontal lines are flown at constant altitude, with no climb or descent in the flight path. For gliders a constant angle from level to 10° below the horizon is free, and any change in the angle is charged. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
 
 ??? note "Details"
 
-    Horizontal lines must be flown at a constant altitude and are judged on the flight path rather than the attitude, because the attitude needed for level flight varies with aircraft type and airspeed. The line should look level whatever angle the nose is held at. Gliders may fly horizontal single lines at a constant, reasonable angle to the horizon, and are only charged if the angle changes. FCScore's glider configuration applies the same level-flight measurement as the powered one, so a constant descent may be charged.
+    Horizontal lines must be flown at a constant altitude and are judged on the flight path rather than the attitude, because the attitude needed for level flight varies with aircraft type and airspeed. The line should look level whatever angle the nose is held at. Gliders may fly horizontal single lines at a constant, reasonable angle to the horizon, and are only charged if the angle changes. The rules set no limit on the angle, so FCScore takes 10° below the horizon as the limit of a reasonable angle: a constant angle from level to 10° below the horizon is free.
 
-    FCScore measures the angle between the aircraft's flight path and the horizontal over each horizontal line and charges each increase in the absolute angle; a decrease is free. A climb or descent already present when the line starts was charged on the element that created it, so it is not charged again. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule. The line between two figures belongs to the next figure, so what is measured on the exit line of a figure is reported with the following figure, and the figure's own score keeps the rest.
+    FCScore measures how the angle between the aircraft's flight path and the horizontal changes over each horizontal line, relative to the angle at the start of the line, taken as no lower than level and no higher than 10° below the horizon. It charges each increase in the difference; a decrease is free, so a constant angle in that bracket costs nothing and any change in the angle is charged. A climb, or a descent of more than 10°, already present when the line starts is charged on the element that created it, at one point per 5° outside the bracket, so it is not charged again. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule. The line between two figures belongs to the next figure, so what is measured on the exit line of a figure is reported with the following figure, and the figure's own score keeps the rest.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, and when the aircraft is high in the box or far off to one side. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -74,7 +81,7 @@ Checks that the nose does not swing sideways on vertical and 45° lines. Only gr
 
 ??? note "Details"
 
-    Vertical and 45° lines are judged on the attitude of the aircraft, according to its zero-lift axis, not on the flight path, so wind drift is ignored but the aircraft must point exactly along the line. The wings must also stay aligned with a box axis and the horizon.
+    Vertical and 45° lines are judged on the attitude of the aircraft, according to its zero-lift axis, not on the flight path, so wind drift is ignored but the aircraft must point exactly along the line. The wings must also stay aligned with a box axis and the horizon. In the Primary, Sportsman and Intermediate glider categories the rules replace 45° lines with 30° lines (60° from the vertical, 34.20.1.1). FCScore does not implement this yet and still judges 45° lines in those categories.
 
     FCScore measures the angle of the fuselage relative to the template line in the sideways (yaw) direction and charges each increase in the absolute angle over the line; a decrease is free. It uses the fuselage centre-line as the reference rather than your zero-lift axis, which it does not know. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
@@ -96,7 +103,7 @@ Checks that the nose does not lean forwards or backwards on vertical and 45° li
 
 ??? note "Details"
 
-    Vertical and 45° lines are judged on the attitude of the aircraft, according to its zero-lift axis, not on the flight path, so wind drift is ignored but the aircraft must point exactly along the line, truly vertical or at exactly 45°.
+    Vertical and 45° lines are judged on the attitude of the aircraft, according to its zero-lift axis, not on the flight path, so wind drift is ignored but the aircraft must point exactly along the line, truly vertical or at exactly 45°. In the Primary, Sportsman and Intermediate glider categories the rules replace 45° lines with 30° lines (60° from the vertical, 34.20.1.1). FCScore does not implement this yet and still judges 45° lines in those categories.
 
     FCScore measures the angle of the fuselage relative to the template line in the pitch direction and charges each increase in the absolute angle over the line; a decrease is free. It uses the fuselage centre-line as the reference rather than your zero-lift axis, which it does not know. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
@@ -114,13 +121,13 @@ Checks that the nose does not lean forwards or backwards on vertical and 45° li
 
 `axial_track`
 
-Checks that turns hold a constant altitude. Only growth in the climb or descent angle of the flight path around the turn is charged, so returning to level flight is free. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
+Checks that turns hold a constant altitude. For gliders a constant angle from level to 10° below the horizon is free, and any change in the angle of the flight path around the turn is charged. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
 
 ??? note "Details"
 
-    In turns and rolling turns the altitude must be constant: a change costs one point for every 5° or 100 feet. Wind effects on a turn are not downgraded, but the pilot must still hold the turn level. Gliders may fly turns at a constant, reasonable angle to the horizon, and are only charged if that angle changes during the figure. FCScore's glider configuration applies the same level-turn measurement as the powered one, so a constant descent may be charged.
+    In turns and rolling turns the altitude must be constant: a change costs one point for every 5° or 100 feet. Wind effects on a turn are not downgraded, but the pilot must still hold the turn level. Gliders may fly turns at a constant, reasonable angle to the horizon, and are only charged if that angle changes during the figure; the rules give a constant 10° descent in a 360° rolling turn as an example that is not charged. The rules set no limit on the angle, so FCScore takes 10° below the horizon as the limit of a reasonable angle.
 
-    FCScore measures the angle between the flight path and the horizontal plane of the turn, and charges each increase in the absolute angle; a decrease is free. It applies to horizontal arcs such as turns and rolling turns, and not to loops in a vertical plane. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore measures how the angle between the flight path and the horizontal plane of the turn changes around the turn, relative to the angle at the start of the turn, taken as no lower than level and no higher than 10° below the horizon. It charges each increase in the difference; a decrease is free, so a constant angle in that bracket costs nothing and any change in the angle is charged. It applies to horizontal arcs such as turns and rolling turns, and not to loops in a vertical plane. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, and when the aircraft is high in the box or far off to one side. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -154,13 +161,13 @@ Checks that the nose stays in the plane of the loop. Only growth in the out-of-p
 
 `radial_track`
 
-Checks that the flight path is exactly level when a loop returns to horizontal flight. The full angle error at the end of the loop is charged once. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+Checks the flight path when a loop returns to horizontal flight. For gliders a flight path from level to 10° below the horizon is free; the angle outside that bracket at the end of the loop is charged once. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
 
 ??? note "Details"
 
-    When a looping line returns to a horizontal line, that line is judged on flight path, so the loop must finish with the flight path exactly horizontal, with no extra or missing degrees of arc.
+    When a looping line returns to a horizontal line, that line is judged on flight path, so the loop must finish with the flight path exactly horizontal, with no extra or missing degrees of arc. Gliders may leave the loop on a line at any reasonable constant angle, which need not match the entry line (34.20.2.1, 34.20.3.1); FCScore takes level to 10° below the horizon as the reasonable range.
 
-    FCScore takes the last point of the loop and charges the whole angle between the flight path and the template within the plane of the loop. It is an absolute measure at the end of the loop, so an over- or under-flown arc is charged here once and the line that follows is only charged for further change. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore takes the last point of the loop and charges the angle by which the flight path in the plane of the loop is outside the bracket from level to 10° below the horizon; an angle inside the bracket is free. It is an absolute measure at the end of the loop, so an over- or under-flown arc is charged here once and the line that follows is only charged for further change. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -180,7 +187,7 @@ Checks that the aircraft points exactly along the following line when a loop end
 
 ??? note "Details"
 
-    Vertical and 45° lines are judged on attitude, so when a loop ends on one the aircraft must be pointing exactly along that line as the loop finishes, within one point per 5° of error.
+    Vertical and 45° lines are judged on attitude, so when a loop ends on one the aircraft must be pointing exactly along that line as the loop finishes, within one point per 5° of error. In the Primary, Sportsman and Intermediate glider categories the rules replace 45° lines with 30° lines (60° from the vertical, 34.20.1.1). FCScore does not implement this yet and still judges 45° lines in those categories.
 
     FCScore takes the last point of the loop and charges the whole angle between the fuselage and the template within the plane of the loop. It is an absolute measure at the end of the loop, so an over- or under-flown arc is charged here once and the line that follows is only charged for further change. It also applies at the end of horizontal arcs. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
@@ -718,13 +725,13 @@ Checks that the aircraft returns to the correct heading after a snap on a vertic
 
 `snap_exit_climb`
 
-Checks that the flight path returns to level after a snap that finishes on a horizontal line. Only growth in the climb or descent angle between the start and end of the snap is charged. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
+Checks that the flight path returns to level after a snap that finishes on a horizontal line. Only a change in the climb or descent angle between the start and end of the snap is charged, measured from the start angle limited to the bracket from level to 10° below the horizon. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
 
 ??? note "Details"
 
-    At the end of a snap the aircraft must immediately adopt the flight path that fits the underlying figure, and horizontal lines are judged on flight path. Failing to re-establish it costs one point for every 5°.
+    At the end of a snap the aircraft must immediately adopt the flight path that fits the underlying figure, and horizontal lines are judged on flight path. Failing to re-establish it costs one point for every 5°. Gliders may fly the line at a reasonable constant angle; FCScore takes level to 10° below the horizon as the reasonable range.
 
-    FCScore compares the flight path angle to the horizontal at the first and last points of the snap and charges any increase in the absolute error between them. A snap that leaves the path closer to the template than it started is free, and an error present before the snap is not charged again. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore compares the flight path angle to the horizontal at the first and last points of the snap, relative to the angle at the start of the snap (taken as no lower than level and no higher than 10° below the horizon), and charges any increase in the difference between them. A snap that leaves the path closer to that angle than it started is free, and an error present before the snap is not charged again. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, and when the aircraft is high in the box or far off to one side. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -900,13 +907,13 @@ Checks that the aircraft comes to a stop at the top of the vertical line before 
 
 `tailslide_drop`
 
-Checks that the aircraft slides backwards a visible distance. A slide shorter than 1 m is charged. Small errors are discounted when hard to see: along the judge's line of sight, or when the aircraft is high or wide in the box.
+Checks that the aircraft slides backwards a visible distance. A slide shorter than 0.3 m is charged, up to about one point for no slide. Small errors are discounted when hard to see: along the judge's line of sight, or when the aircraft is high or wide in the box.
 
 ??? note "Details"
 
-    The aircraft must slide backwards at least half a fuselage length; if it does not the figure is a hard zero. For gliders the slide only has to be visible.
+    The aircraft must slide backwards at least half a fuselage length; if it does not the figure is a hard zero. For gliders the slide only has to be visible (34.20.5.1).
 
-    FCScore adds up the distance travelled backwards through the tailslide and charges any shortfall below 1 m. FCScore uses a fixed distance rather than your fuselage length, and charges a graded downgrade rather than the hard zero given in the rules.
+    FCScore adds up the distance travelled backwards through the tailslide and charges any shortfall below 0.3 m, which FCScore takes as a visible slide for a glider (the powered configuration uses 1 m). FCScore uses a fixed distance rather than your fuselage length, and a slide that is missing altogether costs about one point, the same graded charge as the powered configuration, rather than the hard zero given in the power rules.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight than across it, and when the aircraft is high in the box or far off to one side. Large errors are counted in full.
 
@@ -922,13 +929,13 @@ Checks that the aircraft slides backwards a visible distance. A slide shorter th
 
 `seqstart_entry_climb`
 
-Checks the climb angle before the first figure. The error at the start of the window, just before the figure, is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
+Checks the climb angle before the first figure. The angle outside the bracket from level to 10° below the horizon at the start of the window, just before the figure, is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
 
 ??? note "Details"
 
-    Figures begin in wings-level, horizontal flight aligned with a box axis. Nothing is judged before the first figure of a sequence, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure level and aligned and does not dive, climb or bank into it.
+    Figures begin in wings-level, horizontal flight aligned with a box axis. Nothing is judged before the first figure of a sequence, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure level and aligned and does not dive, climb or bank into it. Gliders may fly this line at a reasonable constant angle; FCScore takes level to 10° below the horizon as the reasonable range.
 
-    FCScore takes the sample one second before the start of the first element of the figure and charges the whole angle between the flight path and the horizontal. It is an absolute measure because nothing earlier has been charged. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore takes the sample one second before the start of the first element of the figure and charges the angle by which the flight path is outside the bracket from level to 10° below the horizon. It is an absolute measure because nothing earlier has been charged. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, and when the aircraft is high in the box or far off to one side. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -948,9 +955,9 @@ Checks the climb angle stays correct before the first figure. Only growth in the
 
 ??? note "Details"
 
-    Figures begin in wings-level, horizontal flight aligned with a box axis. Nothing is judged before the first figure of a sequence, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure level and aligned and does not dive, climb or bank into it.
+    Figures begin in wings-level, horizontal flight aligned with a box axis. Nothing is judged before the first figure of a sequence, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure level and aligned and does not dive, climb or bank into it. Gliders may fly this line at a reasonable constant angle; FCScore takes level to 10° below the horizon as the reasonable range.
 
-    FCScore measures the angle between the flight path and the horizontal over the last second of the line before the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at that point, not again here. The window ends where the figure starts and moves with it, so the error cannot be moved out of the score by placing the start of the figure later. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore measures how the angle between the flight path and the horizontal changes over the last second of the line before the figure, relative to the angle at the start of the window (taken as no lower than level and no higher than 10° below the horizon), and charges each increase in the difference; a decrease is free. An error already present at the start of the window is charged by the matching check at that point, not again here. The window ends where the figure starts and moves with it, so the error cannot be moved out of the score by placing the start of the figure later. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, and when the aircraft is high in the box or far off to one side. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -1054,13 +1061,13 @@ Checks the roll angle stays correct before the first figure. Only growth in the 
 
 `seqend_exit_climb`
 
-Checks the climb angle after the last figure. The error at the end of the figure is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
+Checks the climb angle after the last figure. The angle outside the bracket from level to 10° below the horizon at the end of the figure is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, or high or wide in the box.
 
 ??? note "Details"
 
-    Figures end in wings-level, horizontal flight aligned with a box axis. Nothing is judged after the last figure of a sequence, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+    Figures end in wings-level, horizontal flight aligned with a box axis. Nothing is judged after the last figure of a sequence, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it. Gliders may fly this line at a reasonable constant angle; FCScore takes level to 10° below the horizon as the reasonable range.
 
-    FCScore takes the last point of the figure, the start of the exit line, and charges the whole angle between the flight path and the horizontal. It is an absolute measure because nothing earlier has been charged. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore takes the last point of the figure, the start of the exit line, and charges the angle by which the flight path is outside the bracket from level to 10° below the horizon. It is an absolute measure because nothing earlier has been charged. FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, and when the aircraft is high in the box or far off to one side. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -1080,9 +1087,9 @@ Checks the climb angle stays correct after the last figure. Only growth in the e
 
 ??? note "Details"
 
-    Figures end in wings-level, horizontal flight aligned with a box axis. Nothing is judged after the last figure of a sequence, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+    Figures end in wings-level, horizontal flight aligned with a box axis. Nothing is judged after the last figure of a sequence, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it. Gliders may fly this line at a reasonable constant angle; FCScore takes level to 10° below the horizon as the reasonable range.
 
-    FCScore measures the angle between the flight path and the horizontal over the first second of the line after the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at the end of the figure, not again here. The window starts where the figure ends and moves with it, so an overshoot cannot be moved out of the score by ending the figure earlier. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
+    FCScore measures how the angle between the flight path and the horizontal changes over the first second of the line after the figure, relative to the angle at the start of the window (taken as no lower than level and no higher than 10° below the horizon), and charges each increase in the difference; a decrease is free. An error already present at the start of the window is charged by the matching check at the end of the figure, not again here. The window starts where the figure ends and moves with it, so an overshoot cannot be moved out of the score by ending the figure earlier. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 5° of error, in line with the IAC rule.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, and when the aircraft is high in the box or far off to one side. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -1348,9 +1355,9 @@ Checks that lines that must be of equal length in a figure are. Each length is c
 
 ??? note "Details"
 
-    Interior lines do not have to be equal unless the figure says so, as in Family 3 and the square and octagon loops. Where equal lengths are required, a visible variation of less than 2:1 costs one point, 2:1 to 3:1 two points, and 3:1 or more three points, with the first line flown as the basis. For gliders, lines containing a snap, or a snap in an unlinked roll combination, are not subject to the line length rules.
+    Interior lines do not have to be equal unless the figure says so, as in Family 3 and the square and octagon loops. Where equal lengths are required, a visible variation of less than 2:1 costs one point, 2:1 to 3:1 two points, and 3:1 or more three points, with the first line flown as the basis. For gliders, lines containing a snap, or a snap in an unlinked roll combination, are not subject to the line length rules (34.20.4.1). Aileron and hesitation rolls on other lines must still be centred.
 
-    FCScore takes the length of each line the figure requires to match and compares each with the previous one, charging in proportion to how many times longer one is than the other. A pair that matches scores zero, whatever the length. FCScore's scale is smooth rather than in the rulebook's steps.
+    FCScore takes the length of each line the figure requires to match and compares each with the previous one, charging in proportion to how many times longer one is than the other. A pair that matches scores zero, whatever the length. A line that contains a snap is left out of the comparison. FCScore's scale is smooth rather than in the rulebook's steps.
 
     Visibility scales the whole downgrade, not only small differences. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour.
 
@@ -1414,9 +1421,9 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 
 ??? note "Details"
 
-    If any kind of roll is placed on an interior line, the lengths of the two parts of the line before and after the roll must be equal, with the same penalties as other equal-length lines. For gliders, lines containing a snap, or a snap in an unlinked roll combination, are not subject to the line length rules.
+    If any kind of roll is placed on an interior line, the lengths of the two parts of the line before and after the roll must be equal, with the same penalties as other equal-length lines. For gliders, lines containing a snap, or a snap in an unlinked roll combination, are not subject to the line length rules (34.20.4.1). Aileron and hesitation rolls on other lines must still be centred.
 
-    FCScore compares the length of line before the roll with the length after, charging in proportion to how many times longer one is than the other. A roll that is perfectly centred scores zero, whatever the length of the line.
+    FCScore compares the length of line before the roll with the length after, charging in proportion to how many times longer one is than the other. A roll that is perfectly centred scores zero, whatever the length of the line. A line that contains a snap is left out of the comparison, so a snap can sit anywhere on its line.
 
     Visibility scales the whole downgrade, not only small differences. Each comparison is weighted by how large the elements are compared with the height of the aerobatic box, taking the more visible of the two elements being compared: an element that fills the box is fully visible, while a small one is proportionally harder to judge against its neighbour.
 

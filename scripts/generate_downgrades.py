@@ -23,7 +23,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-DISCIPLINES = {"f3a": "F3A", "IMAC": "IMAC", "IAC": "IAC", "IACGlider": "IAC Glider"}
+DISCIPLINES = {"f3a": "F3A", "IMAC": "IMAC", "IAC": "IAC", "IACGlider": "IAC Glider",
+               "CIVA": "CIVA", "CIVAGlider": "CIVA Glider"}
 COMMIT_PREFIX = "Generated from Tuning commit"
 COMMIT_RE = re.compile(r"^" + COMMIT_PREFIX + r".*$", re.M)
 
