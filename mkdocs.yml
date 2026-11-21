@@ -36,6 +36,7 @@ nav:
     - Scoring a Flight:
       - instructions/scoring/index.md
       - Loading Flight Data: instructions/scoring/load_flight_data.md
+      - Setting up your ArduPilot logger: instructions/scoring/logger_setup.md
       - Set Up The Box: instructions/scoring/box_definition.md
       - Define The Manoeuvres: instructions/scoring/manoeuvre_segmentation.md
       - Results: instructions/scoring/results.md
