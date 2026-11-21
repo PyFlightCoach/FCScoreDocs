@@ -11,7 +11,7 @@ For a BIN file:
 - FCScore checks whether the file is already loaded and reads it, showing progress.
 - A summary shows the boot time, duration, logging frequency and the position of the flight. The flight is cropped to the airborne part of the log.
 - You can optionally add a Flight Coach JSON file (`.json`, `.f3a`). It supplies your recorded box position and manoeuvre splits. If its pilot position is far from the position in the BIN file you are asked whether to use it anyway.
-- A warning is shown if the logging rate is 18 Hz or below. FCScore expects about 20 Hz and asks you to confirm before continuing at a lower rate.
+- A warning is shown if the logging rate is 18 Hz or below. FCScore expects about 20 Hz and asks you to confirm before continuing at a lower rate. For a log with logger set-up or sensor problems, see [Setting up your ArduPilot logger](logger_setup.md), which explains each warning and the recommended parameters.
 - Click **Continue to box setup** to go to the [box](box_definition.md).
 
 For an AcroWRX file, FCScore looks the sequence up in the database. If the sequence is not there yet you are asked to choose the judging rules (**Judging rules** list, then **Continue**) to create its schedule with.
