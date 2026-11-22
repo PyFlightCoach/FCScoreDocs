@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `8ec590c`.
+Generated from Tuning commit: `9bb5210`.
 
 **Rulebook source**
 
@@ -30,7 +30,7 @@ Checks that the flight path of each line stays on the template heading, with no 
 
     Lines are judged on flight path, so the path over the ground must stay straight on the correct heading and be wind corrected. Any drift observed on any line, horizontal, 45° or vertical, is downgraded at 0.5 point for each 5°, but the attitude changes needed to hold the path are ignored.
 
-    FCScore compares the direction of the aircraft's velocity with the template line and measures the sideways (heading) angle between them on each line. Each increase in the absolute error is charged and each decrease is free, so a drift that builds up costs points while correcting back does not, and an error already present when the line starts is not charged again because it was charged where it arose. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
+    FCScore compares the direction of the aircraft's velocity with the template line and measures the sideways (heading) angle between them on each line. Each increase in the absolute error is charged and each decrease is free, so a drift that builds up costs points while correcting back does not, and an error already present when the line starts is not charged again because it was charged where it arose. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°. The line between two figures belongs to the next figure, so what is measured on the exit line of a figure is reported with the following figure, and the figure's own score keeps the rest.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -52,7 +52,7 @@ Checks that the flight path of each line stays at the template pitch, with no cl
 
     Lines are judged on flight path, so the path must stay at the correct angle to the horizon, level on a horizontal line and truly vertical on an up- or down-line, and be wind corrected. Any drift observed on any line, horizontal, 45° or vertical, is downgraded at 0.5 point for each 5°.
 
-    FCScore compares the direction of the aircraft's velocity with the template line and measures the angle between them in the pitch direction of the line (climbing or sinking on a horizontal line, leaning forwards or backwards on a vertical one). Each increase in the absolute error is charged and each decrease is free, and an error already present when the line starts is not charged again because it was charged where it arose. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
+    FCScore compares the direction of the aircraft's velocity with the template line and measures the angle between them in the pitch direction of the line (climbing or sinking on a horizontal line, leaning forwards or backwards on a vertical one). Each increase in the absolute error is charged and each decrease is free, and an error already present when the line starts is not charged again because it was charged where it arose. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°. The line between two figures belongs to the next figure, so what is measured on the exit line of a figure is reported with the following figure, and the figure's own score keeps the rest.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
 
@@ -63,50 +63,6 @@ Checks that the flight path of each line stays at the template pitch, with no cl
 > Wind correction shall be used throughout the aerobatic airspace. Any drift observed on any line (horizontal, 45 degrees or vertical) shall be downgraded using the 0.5 point deduction per 5 degrees rule
 >
 > [Section II, 5.3](#rb-general.drift)
-
-### Entry Line Pitch {#entry_track_y}
-
-`entry_track_y`
-
-Checks that the flight path starts level at the first point of the entry line. The full pitch angle between the flight path and the template is charged at that point. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
-
-??? note "Details"
-
-    Figures begin and end on definite horizontal lines, and the first figure begins as the aircraft leaves wings-level horizontal flight. The entry line should be level, judged on flight path.
-
-    FCScore takes the first point of the entry line, the first element of the figure, and charges the whole pitch angle between the direction of travel and the template. It is an absolute measure because nothing earlier in the figure has been charged. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
-
-    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
-
-> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
->
-> [Section II, 7.1](#rb-lines.entry_exit)
-
-> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
->
-> [Section II, 6.2](#rb-lines.figure_start)
-
-### Entry Line Heading {#entry_track_z}
-
-`entry_track_z`
-
-Checks the heading of the flight path at the first point of the entry line. The full angle between the flight path and the template heading is charged at that point. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
-
-??? note "Details"
-
-    Figures begin and end on definite horizontal lines, and the first figure begins as the aircraft leaves wings-level horizontal flight. The entry line should be flown on exactly the heading the figure requires, judged on flight path.
-
-    FCScore takes the first point of the entry line, the first element of the figure, and charges the whole angle between the direction of travel and the template heading. It is an absolute measure because nothing earlier in the figure has been charged. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
-
-    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
-
-> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
->
-> [Section II, 7.1](#rb-lines.entry_exit)
-
-> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
->
-> [Section II, 6.2](#rb-lines.figure_start)
 
 ### Loop Plane Drift {#axial_track}
 
@@ -152,28 +108,6 @@ Checks that the flight path at the end of each loop points in the intended direc
 >
 > [Section II, 6.2](#rb-lines.figure_exit)
 
-### Entry Wings Level {#entry_roll_angle}
-
-`entry_roll_angle`
-
-Checks that the wings are level at the first point of the entry line. The roll angle error at that point is charged in full. Small errors are discounted when they are hard to see: when you are looking at the top or underside of the aircraft, when it is high or wide in the box, or at awkward bank angles.
-
-??? note "Details"
-
-    A figure begins as the aircraft leaves wings-level horizontal flight, and begins and ends on a definite horizontal line. There should be no bank as the figure starts.
-
-    FCScore takes the first point of the entry line, the first element of the figure, and charges the whole difference between the aircraft's roll angle and the template attitude. It is an absolute measure because nothing earlier in the figure has been charged. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
-
-    Visibility only ever reduces how much of a small error is charged. Roll errors are easiest to see when the aircraft is viewed side-on and hardest when you are looking at its top or underside. They are also harder to judge when the aircraft is high in the box or far to one side, and when the bank angle or the line is awkward to picture: wings level, knife-edge and inverted are the easiest references, with the angles in between the hardest. A fixed balancing factor, smaller than for flight path errors, further reduces small roll errors. Large errors are counted in full.
-
-> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
->
-> [Section II, 6.2](#rb-lines.figure_start)
-
-> On the other hand, any bank angle of the wing in the roll axis should be downgraded using the standard rule of 0.5 point deduction per 5 degrees
->
-> [Section II, 5.3](#rb-general.bank)
-
 ### Roll Angle on Lines {#line_roll_angle}
 
 `line_roll_angle`
@@ -184,7 +118,7 @@ Checks that the wings stay at the correct attitude on lines without a roll, and 
 
     Any bank angle of the wing in the roll axis is downgraded at 0.5 point for each 5°, and in a stall turn there must be no roll deviation during the pivot. In a tailslide the roll attitude must stay perpendicular to the plane of the main axis of flight, including during the fall-through.
 
-    FCScore measures the roll angle relative to the template on lines that contain no roll, and through stall turns and tailslides, and charges each increase in the absolute roll error; a decrease is free. An angle already present at the start of the element is not charged again because it was charged where it arose. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
+    FCScore measures the roll angle relative to the template on lines that contain no roll, and through stall turns and tailslides, and charges each increase in the absolute roll error; a decrease is free. An angle already present at the start of the element is not charged again because it was charged where it arose. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°. The line between two figures belongs to the next figure, so what is measured on the exit line of a figure is reported with the following figure, and the figure's own score keeps the rest.
 
     Visibility only ever reduces how much of a small error is charged. Roll errors are easiest to see when the aircraft is viewed side-on and hardest when you are looking at its top or underside. They are also harder to judge when the aircraft is high in the box or far to one side, and when the bank angle or the line is awkward to picture: wings level, knife-edge and inverted are the easiest references, with the angles in between the hardest. A fixed balancing factor, smaller than for flight path errors, further reduces small roll errors. Large errors are counted in full.
 
@@ -319,6 +253,60 @@ Checks that a roll stays where it stopped. After the maximum rotation, any growt
 > The finish of the roll must be as crisp and precise as possible. Coming to a slow finish in fact represents a change in the rate of roll and shall be penalized accordingly.
 >
 > [Section II, 8.9.1](#rb-rolls.finish)
+
+### Roll Centring on the Loop {#loop_roll_centre}
+
+`loop_roll_centre`
+
+Checks that a roll, or roll combination, on a loop is centred on the apex or nadir. The angle between the middle of the rolling section and the apex is charged once for the whole section. Small errors are discounted when they are hard to see: loops viewed edge-on, and loops high or wide in the box.
+
+??? note "Details"
+
+    A rolling element (roll, point rolls or snap roll) at the apex of a loop must be centred in the loop and flown on the arc of the loop itself. If the roll is not centred it is downgraded 0.5 points for every five degrees that it is off centre, and flying the roll on a line at the apex is at least a two point downgrade.
+
+    FCScore takes the whole rolling section of one loop as a single window: the rolls and snaps and the pauses between them, but not the loop flown either side of it. It reads the flight path elevation where the section starts and where it ends. The path falls through the top of a loop and rises through the bottom, so the average of the two elevations is zero when the section is centred about the apex or nadir, whatever the size and shape of the loop (round, P, Q or reversing) and however much of it the pilot uses. An error of 10° in where the roll sits on the loop is a 10° error in that average. FCScore charges its size once, at the end of the section, as an angle, so a roll centred early and one centred late cost the same. It is measured from the flown path, so a roll that misses the apex altogether is still charged for how far from it it was. Rolls and snaps on straight lines are not covered, and neither are loops whose roll fills the whole loop element, which have no apex to centre on. The extra deduction for flying part of a roll on a straight line is not measured here. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
+
+    Visibility only ever reduces how much of a small error is charged. Where a roll sits on a loop is easiest to judge when the loop is viewed face-on (the judge looking along the loop's axis) and hardest when it is seen edge-on, where the position along the loop is hidden. It is also harder to judge high in the box or far to one side. The weighting does not depend on how much of the loop the roll uses. Large errors are counted in full.
+
+> If there is a rolling element (roll, point rolls or snap roll) at the apex of the loop, it must be centered in the loop and flown on the arc of the loop itself (Fig. 38). Flying the roll on a line at the apex of the loop is at least a two (2) point downgrade. If the roll is not centered, it must be downgraded 0.5 points for every five degrees that it is off center.
+>
+> [Section II, 8.7.4a](#rb-loops.integrated_rolls)
+
+### Snap Centring on the Loop {#loop_snap_centre}
+
+`loop_snap_centre`
+
+Checks that a snap roll on a loop is centred on the apex or nadir. The angle between the middle of the rolling section and the apex is charged once for the whole section. Small errors are discounted when they are hard to see: loops viewed edge-on, and loops high or wide in the box.
+
+??? note "Details"
+
+    A snap roll on a loop is part of the same rolling section as the rolls on that loop, and the whole section must be centred about the apex or nadir. The snap is not scored separately: FCScore scores the rolls, snaps and pauses of the loop together as one window, under the roll centring downgrade (loop_roll_centre), and this key is only used to join the snap into it. A loop whose only roll is a snap is scored in the same way, with the snap centred on the apex.
+
+    FCScore takes the whole rolling section of one loop as a single window: the rolls and snaps and the pauses between them, but not the loop flown either side of it. It reads the flight path elevation where the section starts and where it ends. The path falls through the top of a loop and rises through the bottom, so the average of the two elevations is zero when the section is centred about the apex or nadir, whatever the size and shape of the loop (round, P, Q or reversing) and however much of it the pilot uses. An error of 10° in where the roll sits on the loop is a 10° error in that average. FCScore charges its size once, at the end of the section, as an angle, so a roll centred early and one centred late cost the same. It is measured from the flown path, so a roll that misses the apex altogether is still charged for how far from it it was. Rolls and snaps on straight lines are not covered, and neither are loops whose roll fills the whole loop element, which have no apex to centre on. The extra deduction for flying part of a roll on a straight line is not measured here. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
+
+    Visibility only ever reduces how much of a small error is charged. Where a roll sits on a loop is easiest to judge when the loop is viewed face-on (the judge looking along the loop's axis) and hardest when it is seen edge-on, where the position along the loop is hidden. It is also harder to judge high in the box or far to one side. The weighting does not depend on how much of the loop the roll uses. Large errors are counted in full.
+
+> If there is a rolling element (roll, point rolls or snap roll) at the apex of the loop, it must be centered in the loop and flown on the arc of the loop itself (Fig. 38). Flying the roll on a line at the apex of the loop is at least a two (2) point downgrade. If the roll is not centered, it must be downgraded 0.5 points for every five degrees that it is off center.
+>
+> [Section II, 8.7.4a](#rb-loops.integrated_rolls)
+
+### Pause Centring on the Loop {#loop_pause_centre}
+
+`loop_pause_centre`
+
+Checks that a pause between rolls on a loop is centred on the apex or nadir. The angle between the middle of the rolling section and the apex is charged once for the whole section. Small errors are discounted when they are hard to see: loops viewed edge-on, and loops high or wide in the box.
+
+??? note "Details"
+
+    A pause between two rolls or snaps on a loop is part of the same rolling section as the rolls on that loop, and the whole section must be centred about the apex or nadir. The pause is not scored separately: FCScore scores the rolls, snaps and pauses of the loop together as one window, under the roll centring downgrade (loop_roll_centre), and this key is only used to join the pause into it. The pads of the loop before and after the rolling section are not part of it.
+
+    FCScore takes the whole rolling section of one loop as a single window: the rolls and snaps and the pauses between them, but not the loop flown either side of it. It reads the flight path elevation where the section starts and where it ends. The path falls through the top of a loop and rises through the bottom, so the average of the two elevations is zero when the section is centred about the apex or nadir, whatever the size and shape of the loop (round, P, Q or reversing) and however much of it the pilot uses. An error of 10° in where the roll sits on the loop is a 10° error in that average. FCScore charges its size once, at the end of the section, as an angle, so a roll centred early and one centred late cost the same. It is measured from the flown path, so a roll that misses the apex altogether is still charged for how far from it it was. Rolls and snaps on straight lines are not covered, and neither are loops whose roll fills the whole loop element, which have no apex to centre on. The extra deduction for flying part of a roll on a straight line is not measured here. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.5 point for each 5°.
+
+    Visibility only ever reduces how much of a small error is charged. Where a roll sits on a loop is easiest to judge when the loop is viewed face-on (the judge looking along the loop's axis) and hardest when it is seen edge-on, where the position along the loop is hidden. It is also harder to judge high in the box or far to one side. The weighting does not depend on how much of the loop the roll uses. Large errors are counted in full.
+
+> If there is a rolling element (roll, point rolls or snap roll) at the apex of the loop, it must be centered in the loop and flown on the arc of the loop itself (Fig. 38). Flying the roll on a line at the apex of the loop is at least a two (2) point downgrade. If the roll is not centered, it must be downgraded 0.5 points for every five degrees that it is off center.
+>
+> [Section II, 8.7.4a](#rb-loops.integrated_rolls)
 
 ### Roll Rate Consistency {#roll_rate}
 
@@ -778,6 +766,286 @@ Checks that the aircraft slides backwards a visible distance. A slide shorter th
 >
 > [Section II, 8.6 b](#rb-tailslides.zero)
 
+### Sequence Entry Yaw {#seqstart_entry_track_z}
+
+`seqstart_entry_track_z`
+
+Checks the heading before the first figure. The error at the start of the window, just before the figure, is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The first figure of a sequence begins as the aircraft leaves wings-level horizontal flight, and every figure begins on a definite horizontal line. Nothing is judged before the first figure, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure on a level, aligned path and does not dive, climb or bank into it.
+
+    FCScore takes the sample one second before the start of the first element of the figure and charges the whole heading (yaw) angle between the direction of travel and the template. It is an absolute measure because nothing earlier has been charged. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+>
+> [Section II, 6.2](#rb-lines.figure_start)
+
+### Sequence Entry Yaw Drift {#seqstart_track_z}
+
+`seqstart_track_z`
+
+Checks the heading stays correct before the first figure. Only growth in the error over the window next to the figure is charged, so a correction back towards the template is free. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The first figure of a sequence begins as the aircraft leaves wings-level horizontal flight, and every figure begins on a definite horizontal line. Nothing is judged before the first figure, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure on a level, aligned path and does not dive, climb or bank into it.
+
+    FCScore measures the heading (yaw) angle between the direction of travel and the template over the last second of the line before the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at that point, not again here. The window ends where the figure starts and moves with it, so the error cannot be moved out of the score by placing the start of the figure later. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+>
+> [Section II, 6.2](#rb-lines.figure_start)
+
+### Sequence Entry Pitch {#seqstart_entry_track_y}
+
+`seqstart_entry_track_y`
+
+Checks the pitch before the first figure. The error at the start of the window, just before the figure, is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The first figure of a sequence begins as the aircraft leaves wings-level horizontal flight, and every figure begins on a definite horizontal line. Nothing is judged before the first figure, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure on a level, aligned path and does not dive, climb or bank into it.
+
+    FCScore takes the sample one second before the start of the first element of the figure and charges the whole pitch angle between the direction of travel and the template. It is an absolute measure because nothing earlier has been charged. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+>
+> [Section II, 6.2](#rb-lines.figure_start)
+
+### Sequence Entry Pitch Drift {#seqstart_track_y}
+
+`seqstart_track_y`
+
+Checks the pitch stays correct before the first figure. Only growth in the error over the window next to the figure is charged, so a correction back towards the template is free. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The first figure of a sequence begins as the aircraft leaves wings-level horizontal flight, and every figure begins on a definite horizontal line. Nothing is judged before the first figure, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure on a level, aligned path and does not dive, climb or bank into it.
+
+    FCScore measures the pitch angle between the direction of travel and the template over the last second of the line before the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at that point, not again here. The window ends where the figure starts and moves with it, so the error cannot be moved out of the score by placing the start of the figure later. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+>
+> [Section II, 6.2](#rb-lines.figure_start)
+
+### Sequence Entry Wings Level {#seqstart_entry_roll_angle}
+
+`seqstart_entry_roll_angle`
+
+Checks the roll angle before the first figure. The error at the start of the window, just before the figure, is charged in full. Small errors are discounted when they are hard to see: when you are looking at the top or underside of the aircraft, when it is high or wide in the box, or at awkward bank angles.
+
+??? note "Details"
+
+    The first figure of a sequence begins as the aircraft leaves wings-level horizontal flight, and every figure begins on a definite horizontal line. Nothing is judged before the first figure, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure on a level, aligned path and does not dive, climb or bank into it.
+
+    FCScore takes the sample one second before the start of the first element of the figure and charges the whole difference between the aircraft's roll angle and the template attitude. It is an absolute measure because nothing earlier has been charged. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. Roll errors are easiest to see when the aircraft is viewed side-on and hardest when you are looking at its top or underside. They are also harder to judge when the aircraft is high in the box or far to one side, and when the bank angle or the line is awkward to picture: wings level, knife-edge and inverted are the easiest references, with the angles in between the hardest. A fixed balancing factor, smaller than for flight path errors, further reduces small roll errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+>
+> [Section II, 6.2](#rb-lines.figure_start)
+
+> On the other hand, any bank angle of the wing in the roll axis should be downgraded using the standard rule of 0.5 point deduction per 5 degrees
+>
+> [Section II, 5.3](#rb-general.bank)
+
+### Sequence Entry Roll Angle {#seqstart_roll_angle}
+
+`seqstart_roll_angle`
+
+Checks the roll angle stays correct before the first figure. Only growth in the error over the window next to the figure is charged, so a correction back towards the template is free. Small errors are discounted when they are hard to see: when you are looking at the top or underside of the aircraft, when it is high or wide in the box, or at awkward bank angles.
+
+??? note "Details"
+
+    The first figure of a sequence begins as the aircraft leaves wings-level horizontal flight, and every figure begins on a definite horizontal line. Nothing is judged before the first figure, so FCScore looks at the last second of the line before it, to make sure the aircraft enters the figure on a level, aligned path and does not dive, climb or bank into it.
+
+    FCScore measures the difference between the aircraft's roll angle and the template attitude over the last second of the line before the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at that point, not again here. The window ends where the figure starts and moves with it, so the error cannot be moved out of the score by placing the start of the figure later. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. Roll errors are easiest to see when the aircraft is viewed side-on and hardest when you are looking at its top or underside. They are also harder to judge when the aircraft is high in the box or far to one side, and when the bank angle or the line is awkward to picture: wings level, knife-edge and inverted are the easiest references, with the angles in between the hardest. A fixed balancing factor, smaller than for flight path errors, further reduces small roll errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+>
+> [Section II, 6.2](#rb-lines.figure_start)
+
+> On the other hand, any bank angle of the wing in the roll axis should be downgraded using the standard rule of 0.5 point deduction per 5 degrees
+>
+> [Section II, 5.3](#rb-general.bank)
+
+### Sequence Exit Yaw {#seqend_exit_track_z}
+
+`seqend_exit_track_z`
+
+Checks the heading after the last figure. The error at the end of the figure is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The last figure of a sequence ends when the aircraft returns to wings-level horizontal flight, and every figure ends on a definite horizontal line. Nothing is judged after the last figure, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+
+    FCScore takes the last point of the figure, the start of the exit line, and charges the whole heading (yaw) angle between the direction of travel and the template. It is an absolute measure because nothing earlier has been charged. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> If an aircraft does not return to wings-level, horizontal flight at the end of one fuselage length when exiting a figure, any deviation from wings level horizontal flight to the track on the line of the following figure MUST be deducted from the score of the figure in progress using the ½ point per 5 degrees rule.
+>
+> [Section II, 6.2](#rb-lines.figure_exit)
+
+### Sequence Exit Yaw Drift {#seqend_track_z}
+
+`seqend_track_z`
+
+Checks the heading stays correct after the last figure. Only growth in the error over the window next to the figure is charged, so a correction back towards the template is free. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The last figure of a sequence ends when the aircraft returns to wings-level horizontal flight, and every figure ends on a definite horizontal line. Nothing is judged after the last figure, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+
+    FCScore measures the heading (yaw) angle between the direction of travel and the template over the first second of the line after the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at the end of the figure, not again here. The window starts where the figure ends and moves with it, so an overshoot cannot be moved out of the score by ending the figure earlier. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> If an aircraft does not return to wings-level, horizontal flight at the end of one fuselage length when exiting a figure, any deviation from wings level horizontal flight to the track on the line of the following figure MUST be deducted from the score of the figure in progress using the ½ point per 5 degrees rule.
+>
+> [Section II, 6.2](#rb-lines.figure_exit)
+
+### Sequence Exit Pitch {#seqend_exit_track_y}
+
+`seqend_exit_track_y`
+
+Checks the pitch after the last figure. The error at the end of the figure is charged in full. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The last figure of a sequence ends when the aircraft returns to wings-level horizontal flight, and every figure ends on a definite horizontal line. Nothing is judged after the last figure, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+
+    FCScore takes the last point of the figure, the start of the exit line, and charges the whole pitch angle between the direction of travel and the template. It is an absolute measure because nothing earlier has been charged. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> If an aircraft does not return to wings-level, horizontal flight at the end of one fuselage length when exiting a figure, any deviation from wings level horizontal flight to the track on the line of the following figure MUST be deducted from the score of the figure in progress using the ½ point per 5 degrees rule.
+>
+> [Section II, 6.2](#rb-lines.figure_exit)
+
+### Sequence Exit Pitch Drift {#seqend_track_y}
+
+`seqend_track_y`
+
+Checks the pitch stays correct after the last figure. Only growth in the error over the window next to the figure is charged, so a correction back towards the template is free. Small errors are discounted when they are hard to see: along the judge's line of sight, high or wide in the box, or on awkward line angles.
+
+??? note "Details"
+
+    The last figure of a sequence ends when the aircraft returns to wings-level horizontal flight, and every figure ends on a definite horizontal line. Nothing is judged after the last figure, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+
+    FCScore measures the pitch angle between the direction of travel and the template over the first second of the line after the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at the end of the figure, not again here. The window starts where the figure ends and moves with it, so an overshoot cannot be moved out of the score by ending the figure earlier. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight (the aircraft moving or pointing towards or away from the judge) than when it lies across it, when the aircraft is high in the box or far off to one side, and when the correct line is at an angle that is hard to picture: horizontal and vertical lines are the easiest to judge, 45° lines are harder and the angles in between are hardest. A fixed balancing factor also scales these errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> If an aircraft does not return to wings-level, horizontal flight at the end of one fuselage length when exiting a figure, any deviation from wings level horizontal flight to the track on the line of the following figure MUST be deducted from the score of the figure in progress using the ½ point per 5 degrees rule.
+>
+> [Section II, 6.2](#rb-lines.figure_exit)
+
+### Sequence Exit Wings Level {#seqend_exit_roll_angle}
+
+`seqend_exit_roll_angle`
+
+Checks the roll angle after the last figure. The error at the end of the figure is charged in full. Small errors are discounted when they are hard to see: when you are looking at the top or underside of the aircraft, when it is high or wide in the box, or at awkward bank angles.
+
+??? note "Details"
+
+    The last figure of a sequence ends when the aircraft returns to wings-level horizontal flight, and every figure ends on a definite horizontal line. Nothing is judged after the last figure, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+
+    FCScore takes the last point of the figure, the start of the exit line, and charges the whole difference between the aircraft's roll angle and the template attitude. It is an absolute measure because nothing earlier has been charged. FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. Roll errors are easiest to see when the aircraft is viewed side-on and hardest when you are looking at its top or underside. They are also harder to judge when the aircraft is high in the box or far to one side, and when the bank angle or the line is awkward to picture: wings level, knife-edge and inverted are the easiest references, with the angles in between the hardest. A fixed balancing factor, smaller than for flight path errors, further reduces small roll errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> If an aircraft does not return to wings-level, horizontal flight at the end of one fuselage length when exiting a figure, any deviation from wings level horizontal flight to the track on the line of the following figure MUST be deducted from the score of the figure in progress using the ½ point per 5 degrees rule.
+>
+> [Section II, 6.2](#rb-lines.figure_exit)
+
+> On the other hand, any bank angle of the wing in the roll axis should be downgraded using the standard rule of 0.5 point deduction per 5 degrees
+>
+> [Section II, 5.3](#rb-general.bank)
+
+### Sequence Exit Roll Angle {#seqend_roll_angle}
+
+`seqend_roll_angle`
+
+Checks the roll angle stays correct after the last figure. Only growth in the error over the window next to the figure is charged, so a correction back towards the template is free. Small errors are discounted when they are hard to see: when you are looking at the top or underside of the aircraft, when it is high or wide in the box, or at awkward bank angles.
+
+??? note "Details"
+
+    The last figure of a sequence ends when the aircraft returns to wings-level horizontal flight, and every figure ends on a definite horizontal line. Nothing is judged after the last figure, so FCScore looks at the first second of the line after it, to make sure the aircraft leaves the figure level and aligned and does not overshoot, dive, climb or bank away from it.
+
+    FCScore measures the difference between the aircraft's roll angle and the template attitude over the first second of the line after the figure and charges each increase in the absolute error; a decrease is free. An error already present at the start of the window is charged by the matching check at the end of the figure, not again here. The window starts where the figure ends and moves with it, so an overshoot cannot be moved out of the score by ending the figure earlier. The window length is a tuning setting (one second by default). FCScore's scale is calibrated to roughly one point per 10° of error, in line with the IMAC rule of 0.
+
+    Visibility only ever reduces how much of a small error is charged. Roll errors are easiest to see when the aircraft is viewed side-on and hardest when you are looking at its top or underside. They are also harder to judge when the aircraft is high in the box or far to one side, and when the bank angle or the line is awkward to picture: wings level, knife-edge and inverted are the easiest references, with the angles in between the hardest. A fixed balancing factor, smaller than for flight path errors, further reduces small roll errors. Large errors are counted in full.
+
+> All figures begin and end on definite horizontal lines, and both must be present in order to earn a good grade.
+>
+> [Section II, 7.1](#rb-lines.entry_exit)
+
+> If an aircraft does not return to wings-level, horizontal flight at the end of one fuselage length when exiting a figure, any deviation from wings level horizontal flight to the track on the line of the following figure MUST be deducted from the score of the figure in progress using the ½ point per 5 degrees rule.
+>
+> [Section II, 6.2](#rb-lines.figure_exit)
+
+> On the other hand, any bank angle of the wing in the roll axis should be downgraded using the standard rule of 0.5 point deduction per 5 degrees
+>
+> [Section II, 5.3](#rb-general.bank)
+
 ## Positioning (box) downgrades
 
 ### Box Ceiling {#top}
@@ -1070,6 +1338,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 
 > Speed of aircraft is not a criterion. A reduction of grade will be applied for each deviation from the prescribed criteria for the figure. The grade will be reduced by 0.5 points for each 5 degrees of deviation.
 
+### Section II, 6.2 {#rb-lines.figure_end}
+
+`lines.figure_end`
+
+> A figure is complete at the moment the aircraft returns to a wings-level, horizontal flight path of one fuselage plane length.
+
 ### Section II, 6.2 {#rb-lines.figure_exit}
 
 `lines.figure_exit`
@@ -1081,6 +1355,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 `lines.figure_start`
 
 > The first figure of a sequence begins at the moment the aircraft departs from its wings-level, horizontal flight path.
+
+### Section II, 7.1 {#rb-lines.between_figures}
+
+`lines.between_figures`
+
+> Therefore, leaving out the line between two figures will downgrade the preceding figure by one (1) point and the following figure also by one (1) point (Fig. 11).
 
 ### Section II, 7.1 {#rb-lines.entry_exit}
 
@@ -1231,6 +1511,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 `loops.matching_radii`
 
 > Where radii of part loops within these figures are required to be the same and they are not, a downgrade of one (1) point is to be applied for each mismatch. The standard is the first part loop flown within the figure.
+
+### Section II, 8.7.4a {#rb-loops.integrated_rolls}
+
+`loops.integrated_rolls`
+
+> If there is a rolling element (roll, point rolls or snap roll) at the apex of the loop, it must be centered in the loop and flown on the arc of the loop itself (Fig. 38). Flying the roll on a line at the apex of the loop is at least a two (2) point downgrade. If the roll is not centered, it must be downgraded 0.5 points for every five degrees that it is off center.
 
 ### Section II, 8.7.4a {#rb-loops.perpendicular}
 
