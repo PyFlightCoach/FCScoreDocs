@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `5e395b4`.
+Generated from Tuning commit: `e3d5e7b`.
 
 **Rulebook source**
 
@@ -1207,11 +1207,9 @@ Checks that the figure stays below the top of the aerobatic box. The distance ab
 
     Gliders must obey the glider altitude limits for their category, and a figure with any portion above the ceiling of the aerobatic box receives a HIGH infringement penalty. The ceiling depends on the category flown.
 
-    FCScore measures how far the aircraft is above the ceiling of the box over the whole figure. Each stretch above is charged in proportion to how far above it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
+    FCScore measures how far the aircraft is above the ceiling of the box over the whole figure. Each stretch above is charged in proportion to how far above it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > HIGH: Assessed if any portion of the figure is above the ceiling of the aerobatic box.
 >
@@ -1231,11 +1229,9 @@ Checks that the figure stays inside the the right boundary of the aerobatic box.
 
     The aerobatic box is a clearly marked area 1,000 m square, and flying any part of a figure outside the lateral boundaries carries a boundary infringement penalty for gliders, with only one such penalty per figure.
 
-    FCScore measures how far the aircraft is outside the right boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
+    FCScore measures how far the aircraft is outside the right boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > Performances occur above a clearly marked area of 1,000 meters (approximately 3,280 feet) square whose central point is the intersection of the X and Y axes.
 >
@@ -1255,11 +1251,9 @@ Checks that the figure stays inside the the left boundary of the aerobatic box. 
 
     The aerobatic box is a clearly marked area 1,000 m square, and flying any part of a figure outside the lateral boundaries carries a boundary infringement penalty for gliders, with only one such penalty per figure.
 
-    FCScore measures how far the aircraft is outside the left boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
+    FCScore measures how far the aircraft is outside the left boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > Performances occur above a clearly marked area of 1,000 meters (approximately 3,280 feet) square whose central point is the intersection of the X and Y axes.
 >
@@ -1279,13 +1273,11 @@ Checks that the figure stays inside the back boundary of the aerobatic box. The 
 
     The aerobatic box is a clearly marked area 1,000 m square, and flying any part of a figure outside its boundaries carries a boundary infringement penalty for gliders, with only one such penalty per figure. A figure that cannot be properly graded because of viewing distance also loses 2 points.
 
-    FCScore measures how far the aircraft is beyond the back boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
+    FCScore measures how far the aircraft is beyond the back boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
 
     The results plot shows the distance from the judge with the back boundary as a dashed line. The judged line follows the measurement inside the boundary and, beyond it, shows the visibility-reduced distance that is charged.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > Performances occur above a clearly marked area of 1,000 meters (approximately 3,280 feet) square whose central point is the intersection of the X and Y axes.
 >
@@ -1305,13 +1297,11 @@ Checks that the figure stays behind the front boundary of the aerobatic box. The
 
     The aerobatic box is a clearly marked area 1,000 m square, and flying any part of a figure outside its boundaries carries a boundary infringement penalty for gliders, with only one such penalty per figure.
 
-    FCScore measures how far the aircraft is in front of the front boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
+    FCScore measures how far the aircraft is in front of the front boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
 
     The results plot shows the distance from the judge with the front boundary as a dashed line. The judged line follows the measurement inside the boundary and, beyond it, shows the visibility-reduced distance that is charged.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > Performances occur above a clearly marked area of 1,000 meters (approximately 3,280 feet) square whose central point is the intersection of the X and Y axes.
 >
@@ -1331,11 +1321,9 @@ Checks that the figure stays above the floor of the aerobatic box. The distance 
 
     Gliders must obey the glider altitude limits for their category, and a figure with any portion below the floor of the aerobatic box receives a LOW infringement penalty; an unsafe altitude far below the floor zeroes the performance. The floor depends on the category flown.
 
-    FCScore measures how far the aircraft is below the floor of the box over the whole figure. Each stretch below is charged in proportion to how far below it is and for how much of the figure's duration, on a steeper scale than the other box limits. The rules apply fixed contest penalties rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
+    FCScore measures how far the aircraft is below the floor of the box over the whole figure. Each stretch below is charged in proportion to how far below it is and for how much of the figure's duration, on a steeper scale than the other box limits. The rules apply fixed contest penalties rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Presentation mark, from 10 down to 0, and weights it with the schedule's Presentation K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Presentation K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > LOW: Assessed if any portion of the figure is below the floor of the aerobatic box.
 >
