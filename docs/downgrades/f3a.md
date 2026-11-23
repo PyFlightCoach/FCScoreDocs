@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `9bb5210`.
+Generated from Tuning commit: `5e395b4`.
 
 **Rulebook source**
 
@@ -744,6 +744,8 @@ Checks that the aircraft pivots in place at the top of a stall turn. The sideway
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight than across it, and when the aircraft is high in the box or far off to one side. Large errors are counted in full.
 
+    The results plot shows the sideways distance moved in metres with the 2 m allowance as a dashed line. The judged line follows the measurement up to the allowance and, beyond it, shows the visibility-reduced width that is charged.
+
 > The model aircraft comes to a stop in forward movement and then must pivot around its centre of gravity (CG) in the yaw axis for the manoeuvre to receive a high score. If the model aircraft does not pivot on the CG, but within a radius of a half-wingspan, 1 point is subtracted. For a radius of pivot up to one wingspan, 2 to 3 points are subtracted and if the radius exceeds 1½ wingspans, the manoeuvre must be downgraded 4 to 5 points.
 >
 > [5B.8.11](#rb-stall_turns.pivot)
@@ -765,6 +767,8 @@ Checks that the aircraft does not lose height through the pivot of a stall turn.
     FCScore measures how far below the highest point of the stall turn the aircraft is at the first and last points of the stall turn element. Any height lost beyond a 2 m allowance is charged. The rulebook does not give a height allowance; this is an FCScore approximation of a clean pivot.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight than across it, and when the aircraft is high in the box or far off to one side. Large errors are counted in full.
+
+    The results plot shows how far the aircraft is below its highest point, in metres, with the 2 m allowance as dashed lines. The judged line follows the measurement inside the allowance and, beyond it, shows the visibility-reduced height loss that is charged.
 
 > The model aircraft comes to a stop in forward movement and then must pivot around its centre of gravity (CG) in the yaw axis for the manoeuvre to receive a high score. If the model aircraft does not pivot on the CG, but within a radius of a half-wingspan, 1 point is subtracted. For a radius of pivot up to one wingspan, 2 to 3 points are subtracted and if the radius exceeds 1½ wingspans, the manoeuvre must be downgraded 4 to 5 points.
 >
@@ -957,6 +961,8 @@ Checks that the manoeuvre is not flown too far from the pilot. The distance beyo
     FCScore measures how far the aircraft is beyond the back limit of the box, 175 m from the pilot, over the whole manoeuvre. Each stretch beyond is charged in proportion to how far out it is and for how much of the manoeuvre's duration. Drift backwards during a spin is added back so it is not counted against the manoeuvre. The scale of the downgrade per metre is an FCScore scale.
 
     Visibility is based on the direction of the error compared with the direction of view: a depth error is hardest to see when the aircraft is straight in front of the judge, because the error then lies along the line of sight, and easier when the aircraft is off to one side, so small excursions straight ahead are discounted. Large excursions are counted in full.
+
+    The results plot shows the distance from the pilot with spin drift removed, which is the value that is judged, with the 175 m limit as a dashed line. The judged line follows the measurement inside the limit and, beyond it, shows the visibility-reduced distance that is charged.
 
 > Flying so far out as to make evaluation of a manoeuvre difficult should be severely downgraded. The main criterion here is visibility. For a large, highly visible model aircraft, a line of flight approximately 175m in front of the pilot may be appropriate, while a smaller less visible model aircraft might have to be flown at say 140 to 150m. Manoeuvres performed on a line greater than approximately 175m in front of the pilot must be downgraded by at least 1 point.
 >

@@ -20,6 +20,14 @@ For each wall of the box, the measurement is how far the aircraft is outside it.
 
 Visibility reduces small errors in the same way as intra downgrades (see [visibility](visibility.md)). Large errors are charged in full. Which visibility applies depends on the wall: lateral limits are easier to judge when low in the box, top limits are always hard to judge and depth limits depend on the direction the aircraft is seen from.
 
+## Where the box downgrades go
+
+In F3A each figure's box downgrades are taken off that figure's score.
+
+IAC, IAC Glider, CIVA, CIVA Glider and IMAC judges instead give the whole sequence one extra mark for placing the figures in the box: Presentation (IAC), Positioning (CIVA) or Airspace Control (IMAC). It is marked from 10 to 0 and weighted by its own K factor, as if it were an extra figure. For these rulesets FCScore does not take the box downgrades off the figures. It adds up the box downgrades of all the figures of the sequence, takes the total off 10 (the lowest mark is 0) and weights the result with the schedule's K factor for the mark. A missing or failed figure adds nothing. The mark is not rounded to the steps the judges use. The figure pages still show the box downgrades, labelled as counted in the sequence score. A schedule with no K factor for the mark, such as a Freestyle programme, keeps the box downgrades on the figures. The [downgrade reference](../downgrades/index.md) describes the mark for each ruleset.
+
+The mark covers only the positioning part of what a judge considers: for IAC Presentation the judge also considers wind management and pacing, which FCScore does not measure.
+
 ## Centring
 
 Where a manoeuvre is a centre manoeuvre, [Centre Position](../downgrades/f3a.md#centre) charges the angle, seen from the pilot, between the centre line and the aircraft at the centre point of the manoeuvre. The absolute angle is used, so left or right is the same. Manoeuvres with no centre point are not charged. The sequence definition says where the centre is: either a boundary between two elements, or a fraction of a centred element.
