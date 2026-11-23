@@ -93,6 +93,11 @@ def render(tuning, disc, label):
         ("Inter-element downgrades",
          [(k, mps.get(k[6:], desc[k].get("rulebook_links", []))) for k in inter_keys]),
     ]
+    # IAC, CIVA and IMAC score box placement once per sequence: the "presentation" description
+    # is that sequence-level score. It is not a downgrade, so no CSV lists it.
+    if "presentation" in desc:
+        sections.append(("Sequence-level score",
+                         [("presentation", desc["presentation"].get("rulebook_links", []))]))
 
     errors = []
     seen = {}

@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `9bb5210`.
+Generated from Tuning commit: `5e395b4`.
 
 **Rulebook source**
 
@@ -28,6 +28,8 @@ Generated from Tuning commit: `9bb5210`.
 > - A flick roll whose autorotation ends with more than 45° of rotation remaining is awarded 0.0 (B.9.25.5). FCScore charges early stops on a graded scale without the step to zero.
 > - The 50 m tolerance around the performance zone (4.4.2.1) and the 750 m upper limit of a split programme (3.9.1.1 b).
 > - Positioning marks, interruptions and the other contest penalties.
+>
+> The Positioning references (4.1.5, 2.3.4, B.10) are the sequence-level positioning mark: the judges' mark (25K Unlimited, 20K Advanced) plus the electronic tracking mark (15K). FCScore gives one score with the combined K factor (40K, 35K), from the box deductions of all the figures.
 
 Rulebook extracts are quoted verbatim and listed under [Rulebook references](#rulebook-references).
 
@@ -815,6 +817,8 @@ Checks that the aircraft pivots near its centre of gravity at the top of a stall
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight than across it, and when the aircraft is high in the box or far off to one side. Large errors are counted in full.
 
+    The results plot shows the sideways distance moved in metres with the allowance as a dashed line. The judged line follows the measurement up to the allowance and, beyond it, shows the visibility-reduced width that is charged.
+
 > To avoid a deduction, it must pivot around a point which should not be farther away from its centre of gravity than its wingtip. When the radius of the rotation is greater, the downgrade is one (1) point per half wingspan.
 >
 > [B.9.5.2 f](#rb-stall_turns.pivot)
@@ -832,6 +836,8 @@ Checks that the aircraft does not lose height through the pivot of a stall turn.
     FCScore measures how far below the highest point of the stall turn the aircraft is at the first and last points of the stall turn element, and charges any height lost beyond a fixed allowance. FCScore uses a fixed distance rather than your wingspan, so it approximates the wingspan-based rule, and it charges smoothly rather than in half-wingspan steps.
 
     Visibility only ever reduces how much of a small error is charged. An error is harder to see when it lies along the judge's line of sight than across it, and when the aircraft is high in the box or far off to one side. Large errors are counted in full.
+
+    The results plot shows how far the aircraft is below its highest point, in metres, with the allowance as dashed lines. The judged line follows the measurement inside the allowance and, beyond it, shows the visibility-reduced height loss that is charged.
 
 > To avoid a deduction, it must pivot around a point which should not be farther away from its centre of gravity than its wingtip. When the radius of the rotation is greater, the downgrade is one (1) point per half wingspan.
 >
@@ -1239,7 +1245,7 @@ Checks the roll angle stays correct after the last figure. Only growth in the er
 
 `top`
 
-Checks that the figure stays below the top of the aerobatic box. The distance above the ceiling, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted.
+Checks that the figure stays below the top of the aerobatic box. The distance above the ceiling, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted. The deduction is not taken off this figure: it is added to the sequence's Positioning score.
 
 ??? note "Details"
 
@@ -1248,6 +1254,8 @@ Checks that the figure stays below the top of the aerobatic box. The distance ab
     FCScore measures how far the aircraft is above the ceiling of the box over the whole figure. Each stretch above is charged in proportion to how far above it is and for how much of the figure's duration. The rules apply a fixed contest penalty per figure rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
+
+    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Positioning mark, from 10 down to 0, and weights it with the schedule's Positioning K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Positioning K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > When an HMD is used, a penalty of 70 points is given if the first figure is started above 1200 m or this limit is exceeded in the course of the first figure.
 >
@@ -1261,7 +1269,7 @@ Checks that the figure stays below the top of the aerobatic box. The distance ab
 
 `right`
 
-Checks that the figure stays inside the the right boundary of the aerobatic box. The distance outside the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted.
+Checks that the figure stays inside the the right boundary of the aerobatic box. The distance outside the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted. The deduction is not taken off this figure: it is added to the sequence's Positioning score.
 
 ??? note "Details"
 
@@ -1270,6 +1278,8 @@ Checks that the figure stays inside the the right boundary of the aerobatic box.
     FCScore measures how far the aircraft is outside the right boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules penalise the time spent outside the zone rather than deducting from the figure mark, so this is an FCScore estimate of the severity of the infringement.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
+
+    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Positioning mark, from 10 down to 0, and weights it with the schedule's Positioning K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Positioning K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The performance zone will be a clearly and distinctly marked area of 1000 x 1000 m, the central point of which will be the intersection of the axes.
 >
@@ -1283,7 +1293,7 @@ Checks that the figure stays inside the the right boundary of the aerobatic box.
 
 `left`
 
-Checks that the figure stays inside the the left boundary of the aerobatic box. The distance outside the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted.
+Checks that the figure stays inside the the left boundary of the aerobatic box. The distance outside the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted. The deduction is not taken off this figure: it is added to the sequence's Positioning score.
 
 ??? note "Details"
 
@@ -1292,6 +1302,8 @@ Checks that the figure stays inside the the left boundary of the aerobatic box. 
     FCScore measures how far the aircraft is outside the left boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules penalise the time spent outside the zone rather than deducting from the figure mark, so this is an FCScore estimate of the severity of the infringement.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
+
+    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Positioning mark, from 10 down to 0, and weights it with the schedule's Positioning K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Positioning K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The performance zone will be a clearly and distinctly marked area of 1000 x 1000 m, the central point of which will be the intersection of the axes.
 >
@@ -1305,7 +1317,7 @@ Checks that the figure stays inside the the left boundary of the aerobatic box. 
 
 `back`
 
-Checks that the figure stays inside the back boundary of the aerobatic box. The distance beyond the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted.
+Checks that the figure stays inside the back boundary of the aerobatic box. The distance beyond the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted. The deduction is not taken off this figure: it is added to the sequence's Positioning score.
 
 ??? note "Details"
 
@@ -1314,6 +1326,10 @@ Checks that the figure stays inside the back boundary of the aerobatic box. The 
     FCScore measures how far the aircraft is beyond the back boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules penalise the time spent outside the zone rather than deducting from the figure mark, so this is an FCScore estimate of the severity of the infringement.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
+
+    The results plot shows the distance from the judge with the back boundary as a dashed line. The judged line follows the measurement inside the boundary and, beyond it, shows the visibility-reduced distance that is charged.
+
+    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Positioning mark, from 10 down to 0, and weights it with the schedule's Positioning K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Positioning K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The performance zone will be a clearly and distinctly marked area of 1000 x 1000 m, the central point of which will be the intersection of the axes.
 >
@@ -1327,7 +1343,7 @@ Checks that the figure stays inside the back boundary of the aerobatic box. The 
 
 `front`
 
-Checks that the figure stays behind the front boundary of the aerobatic box. The distance in front of the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted.
+Checks that the figure stays behind the front boundary of the aerobatic box. The distance in front of the boundary, averaged over the duration of the figure, is charged, so a small or brief excursion costs little. Small excursions that are hard to see are discounted. The deduction is not taken off this figure: it is added to the sequence's Positioning score.
 
 ??? note "Details"
 
@@ -1336,6 +1352,10 @@ Checks that the figure stays behind the front boundary of the aerobatic box. The
     FCScore measures how far the aircraft is in front of the front boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration. The rules penalise the time spent outside the zone rather than deducting from the figure mark, so this is an FCScore estimate of the severity of the infringement.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
+
+    The results plot shows the distance from the judge with the front boundary as a dashed line. The judged line follows the measurement inside the boundary and, beyond it, shows the visibility-reduced distance that is charged.
+
+    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Positioning mark, from 10 down to 0, and weights it with the schedule's Positioning K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Positioning K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The performance zone will be a clearly and distinctly marked area of 1000 x 1000 m, the central point of which will be the intersection of the axes.
 >
@@ -1349,7 +1369,7 @@ Checks that the figure stays behind the front boundary of the aerobatic box. The
 
 `btm`
 
-Checks that the figure stays above the floor of the aerobatic box. The distance below the floor, averaged over the duration of the figure, is charged heavily. Small excursions that are hard to see are discounted.
+Checks that the figure stays above the floor of the aerobatic box. The distance below the floor, averaged over the duration of the figure, is charged heavily. Small excursions that are hard to see are discounted. The deduction is not taken off this figure: it is added to the sequence's Positioning score.
 
 ??? note "Details"
 
@@ -1358,6 +1378,8 @@ Checks that the figure stays above the floor of the aerobatic box. The distance 
     FCScore measures how far the aircraft is below the floor of the box over the whole figure. Each stretch below is charged in proportion to how far below it is and for how much of the figure's duration, on a steeper scale than the other box limits. The rules apply fixed contest penalties rather than a graded deduction, so this is an FCScore estimate of the severity of the infringement.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
+
+    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Positioning mark, from 10 down to 0, and weights it with the schedule's Positioning K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Positioning K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > A competitor flying a figure or part of a figure lower than 200 m (over datum) will receive 70 penalty points for this figure. A competitor flying their programme lower than 100 m (over datum) will be disqualified for this flight.
 >
@@ -1483,7 +1505,45 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 >
 > [B.8.1.8](#rb-gliders.flick_centring)
 
+## Sequence-level score
+
+### Positioning {#presentation}
+
+`presentation`
+
+The sequence positioning mark for glider sequences. FCScore estimates it from the box deductions of all the figures, added up and taken off 10.
+
+??? note "Details"
+
+    In CIVA-G the positioning of the figures is marked by the judges (25K in the Unlimited programmes, 20K for Advanced), and where an electronic tracking system is in use a further 15K is given for the aircraft's position. Each judge combines the 'Pos' annotations into one sequence positioning mark, half a mark for each 'somewhat' non-optimal figure and a full mark for each 'considerably' non-optimal figure, and may revise it by up to one point.
+
+    FCScore gives one positioning score for both: it adds up the box deductions of every figure (how far each figure strays outside the performance zone, measured as the box downgrades describe) and takes the total off 10, weighted by one K factor, the sum of the judges' and the electronic marks: 40K for Unlimited and 35K for Advanced (FCScore's score is closer to the tracking mark than to the judges' placement). The judges' 'Pos' annotations, the symmetry of the sequence and the revision are not modelled.
+
+    The score is 10 minus the total of the figures' box deductions, with a lowest score of 0, and it is weighted by the schedule's Positioning K factor like an extra figure. A missing or failed figure adds nothing, because it already scores 0. The score is continuous, not rounded to the half points the judges use. A schedule with no Positioning K factor, such as a Freestyle programme, has no Positioning score and its figures keep their own box deductions.
+
+> Positioning refers to the 3D placement of each figure relative to the performance zone and to the judges.
+>
+> [4.1.5.1](#rb-positioning.marking)
+
+> At the end of the sequence the annotations in the “Pos” column shall be used by each judge to determine a sequence positioning downgrade based primarily on these recorded observations. Each single letter is taken as equivalent to a half mark and each double letter equivalent to a full mark downgrade. The Judge is entitled to revise his final positioning mark up or down by a maximum of 1 point if he considers there were other relevant factors which should be taken into account to reduce or increase the downgrade.
+>
+> [4.1.5.7](#rb-positioning.downgrade)
+
+> Coefficients for the Programmes “UNG” (Programmes 1, 3, 2, 4, 5 and 6): Positioning (Electronic tracking system in use) 15K, Positioning (marked by Judges only) 25K. Coefficients for the Programmes “ADG”: Positioning (Electronic tracking system in use) 15K, Positioning (marked by Judges only) 20K.
+>
+> [2.3.4](#rb-positioning.k_factor)
+
+> Positioning refers to the placement of the figures in relation to the main and secondary axes of the performance zone. Additionally, positioning relates to the placement of each figure at its optimum distance from the judges, taking into account the height of the glider and the nature of the figure being flown. Lastly, positioning also refers to the symmetrical placement of the entire sequence in relation to the lateral (secondary) axis of the performance zone.
+>
+> [B.10.1.2](#rb-positioning.optimal)
+
 ## Rulebook references
+
+### 2.3.4 {#rb-positioning.k_factor}
+
+`positioning.k_factor`
+
+> Coefficients for the Programmes “UNG” (Programmes 1, 3, 2, 4, 5 and 6): Positioning (Electronic tracking system in use) 15K, Positioning (marked by Judges only) 25K. Coefficients for the Programmes “ADG”: Positioning (Electronic tracking system in use) 15K, Positioning (marked by Judges only) 20K.
 
 ### 3.4.1.1 {#rb-box.limits}
 
@@ -1496,6 +1556,18 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 `box.heights`
 
 > The following height limitations have been determined for all contest flights: a) Upper limit: 1200 m (over datum) … c) Lower limit: 200 m (over datum) d) Disqualification height: 100m (over datum)
+
+### 4.1.5.1 {#rb-positioning.marking}
+
+`positioning.marking`
+
+> Positioning refers to the 3D placement of each figure relative to the performance zone and to the judges.
+
+### 4.1.5.7 {#rb-positioning.downgrade}
+
+`positioning.downgrade`
+
+> At the end of the sequence the annotations in the “Pos” column shall be used by each judge to determine a sequence positioning downgrade based primarily on these recorded observations. Each single letter is taken as equivalent to a half mark and each double letter equivalent to a full mark downgrade. The Judge is entitled to revise his final positioning mark up or down by a maximum of 1 point if he considers there were other relevant factors which should be taken into account to reduce or increase the downgrade.
 
 ### 4.4.1.1 {#rb-box.floor}
 
@@ -1532,6 +1604,12 @@ Checks that a roll is centred on its line, with equal lengths of line before and
 `general.corrections`
 
 > Over-rotating a roll and rolling the wings back again must be penalised by 1 point per 5 degrees of over-rotation, even if the correct geometry is resumed afterwards, no matter how quickly the correction is made.
+
+### B.10.1.2 {#rb-positioning.optimal}
+
+`positioning.optimal`
+
+> Positioning refers to the placement of the figures in relation to the main and secondary axes of the performance zone. Additionally, positioning relates to the placement of each figure at its optimum distance from the judges, taking into account the height of the glider and the nature of the figure being flown. Lastly, positioning also refers to the symmetrical placement of the entire sequence in relation to the lateral (secondary) axis of the performance zone.
 
 ### B.3.1.1 {#rb-general.flight_path}
 
