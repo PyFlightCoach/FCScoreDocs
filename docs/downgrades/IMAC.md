@@ -4,7 +4,7 @@
 
 These descriptions are generated from the Tuning package of FCScore and describe what FCScore measures for each downgrade. See the [downgrade reference](index.md) for how to read them.
 
-Generated from Tuning commit: `5e395b4`.
+Generated from Tuning commit: `e3d5e7b`.
 
 **Rulebook source**
 
@@ -1064,11 +1064,9 @@ Checks that the figure stays inside the top of the box. The distance outside, av
 
     Judges give an overall Airspace Control score for placing the figures so that they can be optimally judged at all times, with a tight footprint. Flying so far away that the aircraft is difficult to judge scores poorly.
 
-    FCScore measures how far the aircraft is outside the top of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control.
+    FCScore measures how far the aircraft is outside the top of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The highest standard for Airspace Control will be the pilot that exhibits a significant ability to control the location of the aircraft inside the airspace, relative to the judges, which results in a tight footprint and has the aircraft such that it can be optimally judged at all times.
 >
@@ -1084,11 +1082,9 @@ Checks that the figure stays inside the right boundary of the box. The distance 
 
     Judges give an overall Airspace Control score for placing the figures so that they can be optimally judged at all times, with a tight footprint. Flying so far away that the aircraft is difficult to judge scores poorly.
 
-    FCScore measures how far the aircraft is outside the right boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control.
+    FCScore measures how far the aircraft is outside the right boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The highest standard for Airspace Control will be the pilot that exhibits a significant ability to control the location of the aircraft inside the airspace, relative to the judges, which results in a tight footprint and has the aircraft such that it can be optimally judged at all times.
 >
@@ -1104,11 +1100,9 @@ Checks that the figure stays inside the left boundary of the box. The distance o
 
     Judges give an overall Airspace Control score for placing the figures so that they can be optimally judged at all times, with a tight footprint. Flying so far away that the aircraft is difficult to judge scores poorly.
 
-    FCScore measures how far the aircraft is outside the left boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control.
+    FCScore measures how far the aircraft is outside the left boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The highest standard for Airspace Control will be the pilot that exhibits a significant ability to control the location of the aircraft inside the airspace, relative to the judges, which results in a tight footprint and has the aircraft such that it can be optimally judged at all times.
 >
@@ -1124,13 +1118,11 @@ Checks that the figure stays inside the back boundary of the box. The distance o
 
     Judges give an overall Airspace Control score for placing the figures so that they can be optimally judged at all times, with a tight footprint. Flying so far away that the aircraft is difficult to judge scores poorly.
 
-    FCScore measures how far the aircraft is outside the back boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control.
+    FCScore measures how far the aircraft is outside the back boundary of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
 
     The results plot shows the distance from the judge with the back boundary as a dashed line. The judged line follows the measurement inside the boundary and, beyond it, shows the visibility-reduced distance that is charged.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The highest standard for Airspace Control will be the pilot that exhibits a significant ability to control the location of the aircraft inside the airspace, relative to the judges, which results in a tight footprint and has the aircraft such that it can be optimally judged at all times.
 >
@@ -1146,13 +1138,11 @@ Checks that the figure stays behind the front boundary of the box, which is plac
 
     The deadline is 100 feet (30.5 m) in front of the contestant, and any maneuver where the aircraft completely or partially crosses it is zeroed for safety reasons.
 
-    FCScore measures how far the aircraft is in front of the front boundary of the box over the whole figure. Each stretch in front is charged in proportion to how far in front it is and for how much of the figure's duration. The rules zero a figure that crosses the deadline, whereas FCScore charges a graded downgrade, so it is only an estimate of the severity. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control.
+    FCScore measures how far the aircraft is in front of the front boundary of the box over the whole figure. Each stretch in front is charged in proportion to how far in front it is and for how much of the figure's duration. The rules zero a figure that crosses the deadline, whereas FCScore charges a graded downgrade, so it is only an estimate of the severity. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
 
     The results plot shows the distance from the judge with the front boundary as a dashed line. The judged line follows the measurement inside the boundary and, beyond it, shows the visibility-reduced distance that is charged.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The “Deadline” is located 100 feet (30.5 meters) in front of the contestant.
 >
@@ -1172,11 +1162,9 @@ Checks that the figure stays inside the floor of the box. The distance outside, 
 
     Judges give an overall Airspace Control score for placing the figures so that they can be optimally judged at all times, with a tight footprint. Flying so far away that the aircraft is difficult to judge scores poorly.
 
-    FCScore measures how far the aircraft is outside the floor of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control.
+    FCScore measures how far the aircraft is outside the floor of the box over the whole figure. Each stretch outside is charged in proportion to how far out it is and for how much of the figure's duration; the floor is charged on a steeper scale. The IMAC guide does not define the dimensions of the box or give a per-figure downgrade for leaving it, so the box used here and the amount charged are FCScore's own estimate of airspace control. The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
     Visibility is based on the direction of the error compared with the direction of view: an error that lies along the line of sight is hard to see, one across it is easier, so small excursions are discounted when they are hard to see. Large excursions are counted in full.
-
-    The deduction does not reduce this figure's score. FCScore adds up the box deductions of all the figures of the sequence into one sequence-level Airspace Control mark, from 10 down to 0, and weights it with the schedule's Airspace Control K factor, as the judges' mark is weighted. The mark is continuous: FCScore does not round it to the steps the judges use. A schedule with no Airspace Control K factor, such as a Freestyle programme, keeps the deduction on the figure instead.
 
 > The highest standard for Airspace Control will be the pilot that exhibits a significant ability to control the location of the aircraft inside the airspace, relative to the judges, which results in a tight footprint and has the aircraft such that it can be optimally judged at all times.
 >
