@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/scoring/load_flight_data/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Load flight data
 
 Flights are now loaded from the **Flight** menu, not from a separate page.
@@ -9,5 +11,3 @@ Flights are now loaded from the **Flight** menu, not from a separate page.
 - **Import** loads a BIN with a saved analysis (AJSON) file.
 
 Next step: set the box at [the Box page](/fcscorebase/flight/new/box)
-
-[Full instructions](/fcsdocsbase/instructions/scoring/load_flight_data/)

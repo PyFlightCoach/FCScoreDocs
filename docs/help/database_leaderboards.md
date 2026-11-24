@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/database/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Leaderboards
 
 Ranks flights stored on the database for a schedule.
@@ -8,5 +10,3 @@ Ranks flights stored on the database for a schedule.
 - **More options** sets the analysis version, difficulty, date range, number of results and other filters. Press **Apply** to update the table or **Reset to defaults**.
 - Click a row to see flight details, then **View Flight** or **View Analysis** to open it.
 - You can only see what a pilot's privacy setting allows.
-
-[Full instructions](/fcsdocsbase/instructions/database/)

@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/scoring/results/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Flight and manoeuvre results
 
 This page serves the whole sequence and each manoeuvre.
@@ -20,5 +22,3 @@ This page serves the whole sequence and each manoeuvre.
 
 ## Upload
 You must be logged in with a verified email and the analysis must be complete. Choose **Privacy** (basic, view flown, view analysis), add **Comments**, then upload. If it cannot be uploaded, the reason is shown.
-
-[Full instructions](/fcsdocsbase/instructions/scoring/results/)

@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Welcome to Flight Coach Score
 
 Use the navigation bar at the top of the page to choose what to do. You do not need an account to analyse a flight, but you need one to share flights and use the leaderboards.
@@ -9,5 +11,3 @@ Use the navigation bar at the top of the page to choose what to do. You do not n
 - **Help button**: enabled when help is available for the page you are on.
 
 When you are logged in this page also shows news and tables of your recent flights, top flights and activity.
-
-[Full instructions](/fcsdocsbase/instructions/)

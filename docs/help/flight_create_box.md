@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/scoring/box_definition/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Define the box
 
 Place the aerobatic box so it matches where you flew. The box menu on the left has the controls.
@@ -8,5 +10,3 @@ Place the aerobatic box so it matches where you flew. The box menu on the left h
 - Press **Score** to choose schedules and split the flight automatically (**Start segmentation and scoring**), or choose **Split manoeuvres manually**.
 - For AcroWRX flights with an embedded sequence, **Split and score AcroWRX sequence** is also offered.
 - Select up to 4 schedules if the recording holds several.
-
-[Full instructions](/fcsdocsbase/instructions/scoring/box_definition/)

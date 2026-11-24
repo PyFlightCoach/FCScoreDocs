@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/scoring/manoeuvre_segmentation/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Split manoeuvres manually
 
 Mark where each manoeuvre ends in the flight. Most flights are split automatically, so use this when that is wrong or you chose **Split manoeuvres manually**.
@@ -7,5 +9,3 @@ Mark where each manoeuvre ends in the flight. Most flights are split automatical
 - Use the arrow beside a manoeuvre to **Change manoeuvre**, **Show template** or delete the last one. Press `b` to change the current manoeuvre to Break.
 - **Segmentation tools** offers **Read FC JSON**, **Restore loaded segmentation** and **Clear all splits**.
 - You can analyse a flight with a different manoeuvre order, but you can only upload a complete sequence flown in order.
-
-[Full instructions](/fcsdocsbase/instructions/scoring/manoeuvre_segmentation/)

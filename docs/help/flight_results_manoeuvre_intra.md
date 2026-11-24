@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/manoeuvre_analysis/intra/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Intra element downgrades
 
 In the current client these are in the manoeuvre view of the results page: select **Intra**, then click a group and a downgrade.
@@ -12,5 +14,3 @@ Each downgrade follows these steps:
 6. Convert each error to a downgrade.
 
 The panel shows the description of each step and a plot of the measurement, visibility, sample and downgrades.
-
-[Full instructions](/fcsdocsbase/instructions/manoeuvre_analysis/intra/)

@@ -1,3 +1,5 @@
+<a href="/fcsdocsbase/instructions/schedules/" target="_blank" rel="noopener noreferrer">Full instructions</a>
+
 # Schedules
 
 Browse the schedules FCScore can analyse, and edit them if you have permission.
@@ -6,5 +8,3 @@ Browse the schedules FCScore can analyse, and edit them if you have permission.
 - Select a schedule to open its editor with its properties and manoeuvres.
 - **Create schedule** makes a new schedule. Optionally start from an Aresti JSON file, set the properties (rules, categories, name, visibility, type, validity) and press Create.
 - In the editor choose the input mode (Open Aero, Database or Manual) to define manoeuvres.
-
-[Full instructions](/fcsdocsbase/instructions/schedules/)
