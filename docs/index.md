@@ -9,5 +9,6 @@ Open the application at [https://www.flightcoach.org/fcscore/](https://www.fligh
 - [Instructions](instructions/index.md): scoring a flight, reading the results, schedules, the flight database, accounts and competitions.
 - [How it Works](process/index.md): how a flight is segmented, aligned and scored.
 - [Description of Downgrades](downgrades/index.md): what each downgrade measures, for each rule set.
+- [Release Notes](releases/index.md): what changed in each release. The latest is [1.0.0](releases/1.0.0.md).
 
-Last updated: 2026-11-17
+Last updated: 2026-11-24
