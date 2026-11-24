@@ -16,6 +16,7 @@ The pages are generated from the Tuning data of FCScore, so they describe what t
 - **Intra-element**: how well a single element (line, loop, roll, and so on) is flown.
 - **Positioning (box)**: where the manoeuvre sits relative to the judges and the box.
 - **Inter-element**: how consistent elements are with each other within a manoeuvre, for example matching loop radii or roll rates.
+- **Sequence-level score**: IAC, CIVA and IMAC judges give each sequence one extra mark for placing the figures in the box, weighted by its own K factor like an extra figure (Presentation in IAC, Positioning in CIVA, Airspace Control in IMAC). For these rulesets the positioning (box) downgrades of every figure are added up into this one score instead of being taken off each figure, and the ruleset's page describes it under *Sequence-level score*. F3A has no such score: its figures keep their box downgrades.
 
 ## Reading a description
 
