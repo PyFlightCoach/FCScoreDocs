@@ -6,5 +6,5 @@ Scores depend on the analysis version that produced them. The version is shown w
 
 | Version | Released | Highlights |
 | --- | --- | --- |
-| [Next (draft)](next.md) | not released | Loop radius and line length matching for figures read from OLAN, compared with the first; non-Aresti figures refused |
+| [Next (draft)](next.md) | not released | Loop radius and line length matching compared with the first value (IAC, CIVA, IMAC) |
 | [1.0.0](1.0.0.md) | 24 November 2026 | New web app, HMM element splitting, several sequences per recording, presentation score for IAC, CIVA and IMAC, CIVA rule sets, IMAC class boxes |
