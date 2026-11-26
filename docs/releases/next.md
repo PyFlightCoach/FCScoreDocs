@@ -49,7 +49,6 @@ Comparing with the first value instead of the previous one makes no difference w
 links two sizes, which is most of them. With more (the four corners of a square loop, the eight
 of an octagonal loop) a size that grows a little at every corner costs more than before.
 
-**Stored schedules** are not read from OLAN again, so their figures keep the sizes they were
-saved with; to pick up the new comparisons, read the sequence from OLAN again. In a stored
-figure that already compares loop radii or line lengths (for example one built in the schedule
-editor), the comparison is now made against the first value when the flight is analysed again.
+**Stored schedules** are not affected. A stored schedule keeps the definition it was saved
+with, including its comparisons, so its flights score as before. To pick up the new
+comparisons, read the sequence from OLAN again.
