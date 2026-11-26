@@ -77,4 +77,5 @@ nav:
     - CIVA Glider: downgrades/CIVAGlider.md
   - Release Notes:
     - releases/index.md
+    - "Next (draft)": releases/next.md
     - "1.0.0": releases/1.0.0.md
