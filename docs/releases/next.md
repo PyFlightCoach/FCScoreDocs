@@ -47,3 +47,27 @@ In a P27 spin flown that way, the spin scored 8.86 instead of 8.47 with the spli
 stall break. A spin entered with a climb and a late nose drop scored the same as before.
 Stored schedules keep the definitions they were saved with until they are built again,
 which the release does.
+
+## Line track errors are easier to see around an attitude change
+
+**For F3A.** The size of this change is still being tuned; the numbers below are for the
+current setting.
+
+A judge's eye is drawn by a visible change of pitch or yaw attitude on a line. A correction
+shows up the error it corrects, and an attitude change can start a new error. The line track
+downgrades ([Line Pitch Drift](../downgrades/f3a.md#track_y),
+[Line Yaw Drift](../downgrades/f3a.md#track_z), the entry line and the spin approach checks)
+now count an error for more in the half second before and the second after such a change,
+and for a little less where the aircraft is steady. F3A still judges the flight path only:
+an attitude change with no track error costs nothing, and a steady crab into wind has no
+attitude change.
+
+The attitude change is measured against the template, on lines only, so the planned start of
+the next loop or roll does not count. A small steady misalignment of the flight controller,
+which would look like the nose circling on rolling lines, is taken out.
+
+**Effect on scores.** Averaged over 230 F3A flights the line track downgrades are unchanged.
+Flights with smooth lines gain and flights with many visible corrections lose, by about
+2 points per flight either way (one standard deviation). Two P27 flights both gained, by 2.9
+and 2.1 points. Stored schedules keep the definitions they were saved with until they are
+built again, which the release does.
