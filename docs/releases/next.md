@@ -56,7 +56,7 @@ current setting.
 A judge's eye is drawn by a visible change of pitch or yaw attitude on a line. A correction
 shows up the error it corrects, and an attitude change can start a new error. The line track
 downgrades ([Line Pitch Drift](../downgrades/f3a.md#track_y),
-[Line Yaw Drift](../downgrades/f3a.md#track_z), the entry line and the spin approach checks)
+[Line Heading Drift](../downgrades/f3a.md#track_z), the entry line and the spin approach checks)
 now count an error for more in the half second before and the second after such a change,
 and for a little less where the aircraft is steady. F3A still judges the flight path only:
 an attitude change with no track error costs nothing, and a steady crab into wind has no
