@@ -26,3 +26,24 @@ and forth costs less. In the sequences checked for the
 [OLAN sizing update](1.0.0.md#matching-sizes-in-figures-read-from-olan), flown with every loop
 radius and line length varied by up to 30%, two figures changed: a CIVA figure gained 0.19
 and an IAC figure lost 0.04. The sequences' average figure scores moved by less than 0.03.
+
+## Spin nose drop measured until the nose has dropped
+
+**For F3A.**
+
+[Spin Nose Drop](../downgrades/f3a.md#drop_pitch_rate) checks that the nose drops decisively
+as the model stalls into the spin. It charges time spent with the nose dropping slower than
+10° per second. Until now it looked at the spin from its start to the first 15° of rotation.
+It now stops at 15° of rotation or when the nose has dropped 7.5°, whichever comes first.
+
+In a clean stall break the nose drops first and then, for a moment as the wing drops, the
+nose-down rate pauses. The old window took in that pause and charged it whenever the spin
+was taken to start at the stall break, so the split was pushed later and the nose drop
+was charged instead as a descent before the spin. A model that rotates without the nose
+dropping is still checked over the whole 15° of rotation.
+
+**Effect on scores.** Only F3A spins change, and only where the nose drops before the wing.
+In a P27 spin flown that way, the spin scored 8.86 instead of 8.47 with the split at the
+stall break. A spin entered with a climb and a late nose drop scored the same as before.
+Stored schedules keep the definitions they were saved with until they are built again,
+which the release does.
